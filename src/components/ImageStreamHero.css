@@ -1,0 +1,29 @@
+.ish-root {
+  position: relative;
+  overflow: hidden;
+}
+
+.ish-corridor {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.ish-stage {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.ish-card {
+  position: absolute;
+  overflow: hidden;
+}
+
+.ish-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}

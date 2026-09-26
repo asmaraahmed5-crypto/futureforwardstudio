@@ -1,0 +1,78 @@
+.spot-btn {
+  position: relative;
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: border-color 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+
+.spot-btn:hover { transform: translateY(-1px); }
+.spot-btn:active { transform: translateY(0); }
+.spot-btn:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.spot-btn__glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.25s;
+}
+
+.spot-btn__label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Variants ── */
+
+/* on light/white backgrounds */
+.spot-btn--dark {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+  --spot-color: rgba(255, 255, 255, 0.14);
+}
+
+/* on dark backgrounds: white fill */
+.spot-btn--primary {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+  --spot-color: rgba(0, 0, 0, 0.09);
+}
+
+/* on dark backgrounds: transparent outline */
+.spot-btn--ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.45);
+  --spot-color: rgba(255, 255, 255, 0.12);
+}
+
+/* on light backgrounds: transparent outline */
+.spot-btn--outline-dark {
+  background: transparent;
+  color: var(--black);
+  border-color: var(--black);
+  --spot-color: rgba(0, 0, 0, 0.07);
+}
+
+.spot-btn--sm {
+  padding: 10px 20px;
+  font-size: 12px;
+}

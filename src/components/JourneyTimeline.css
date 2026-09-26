@@ -1,0 +1,274 @@
+/* ── JourneyTimeline ─────────────────────────────────── */
+
+.jt-section {
+  width: 100%;
+  height: 180vw;
+  position: relative;
+  /* overflow must NOT be set here — it would break position:sticky on .jt-sticky */
+}
+
+/* Sticky container fills the full viewport */
+.jt-sticky {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 60px 0;
+  box-sizing: border-box;
+}
+
+/* ── Static header ── */
+.jt-head {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 24px;
+}
+
+.jt-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.jt-h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 2.8vw, 46px);
+  font-weight: 700;
+  line-height: 0.96;
+  margin: 0;
+}
+
+.jt-sub {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1vw, 15px);
+  line-height: 1.55;
+  max-width: 48ch;
+  margin: 0;
+}
+
+/* ── Scrolling track ── */
+.jt-track {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Center line — absolute, runs the full track width */
+.jt-center-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.jt-line-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.journey-line {
+  height: 2px;
+  width: 0%;
+  border-radius: 9999px;
+  flex: 1;
+}
+
+/* Slider — GSAP pans this left */
+.jt-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200vw;
+  display: flex;
+  align-items: flex-end;          /* items sit above the bottom line */
+  padding: 0 60px 16px 50vw;     /* 50vw left push: first item starts off-screen right */
+  gap: 6vw;
+  box-sizing: border-box;
+}
+
+/* ── Each item — fills full track height ── */
+.jt-item {
+  flex-shrink: 0;
+  width: 20vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text: number at top, body at bottom */
+.jt-item-text {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.jt-item-num {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.jt-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jt-item-title {
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.75vw, 26px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.jt-item-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 0.9vw, 13px);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 22ch;
+}
+
+/* Stem: vertical line + dot anchoring to center line at the very bottom */
+.jt-stem {
+  flex-shrink: 0;
+  height: 40px;
+  width: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.jt-stem-line {
+  width: 2px;
+  flex: 1;
+  border-radius: 2px;
+}
+
+.jt-stem-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: -4.5px;
+}
+
+/* ── Big statement block ── */
+.jt-statement {
+  flex-shrink: 0;
+  padding: 28px 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.jt-stmt-line {
+  font-family: var(--font-sans);
+  font-size: clamp(24px, 3.8vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.jt-stmt-accent {
+  font-style: italic;
+}
+
+/* ── CTA ── */
+.jt-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 24px 72px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .jt-section {
+    height: auto;
+    overflow: visible;
+  }
+
+  .jt-sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+    padding: 56px 24px 0;
+  }
+
+  .jt-head      { padding-bottom: 32px; }
+  .jt-h2        { font-size: 28px; }
+  .jt-sub       { font-size: 13px; }
+
+  /* Track: vertical list instead of horizontal scroll */
+  .jt-track {
+    overflow: visible;
+    flex: unset;
+    height: auto;
+  }
+
+  .jt-center-line { display: none; }
+
+  .jt-slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 28px;
+    border-left: 2px solid rgba(255,255,255,0.15);
+    padding-left: 20px;
+    padding-bottom: 0;
+  }
+
+  .jt-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .jt-item-text {
+    flex: unset;
+    overflow: visible;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-bottom: 0;
+  }
+
+  .jt-item-num   { display: none; }
+  .jt-stem       { display: none; }
+
+  .jt-item-title { font-size: 20px; }
+  .jt-item-desc  { font-size: 13px; max-width: 100%; }
+
+  .jt-statement {
+    padding: 40px 0 36px;
+    gap: 0;
+  }
+
+  .jt-stmt-line { font-size: clamp(22px, 7vw, 36px); }
+}
