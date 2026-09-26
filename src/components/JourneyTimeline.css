@@ -173,12 +173,13 @@
 
 /* ── Big statement block ── */
 .jt-statement {
-  flex: 1;
-  padding: 28px 0 40px;
+  flex-shrink: 0;
+  padding: 36px 0 32px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
 }
 
 .jt-stmt-line {
@@ -188,6 +189,7 @@
   line-height: 1.05;
   margin: 0;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .jt-stmt-accent {
@@ -199,7 +201,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 56px 24px 72px;
+  padding: 20px 24px 48px;
 }
 
 /* ── Mobile ── */
