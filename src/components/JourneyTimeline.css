@@ -196,12 +196,13 @@
   font-style: italic;
 }
 
-/* ── CTA ── */
+/* ── CTA — anchors to bottom of sticky via margin-top: auto ── */
 .jt-cta {
+  margin-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 24px 48px;
+  padding: 16px 24px 40px;
 }
 
 /* ── Mobile ── */

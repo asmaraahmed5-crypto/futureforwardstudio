@@ -163,14 +163,14 @@ export function JourneyTimeline() {
             </p>
           </div>
 
-        </div>
-      </div>
+          {/* CTA — inside sticky so it anchors to the bottom of the pinned view */}
+          <div className="jt-cta">
+            <SpotButton href="#contact" className="spot-btn--ghost">
+              Turn Attention Into Action →
+            </SpotButton>
+          </div>
 
-      {/* CTA */}
-      <div className="jt-cta" style={{ background: BG }}>
-        <SpotButton href="#contact" className="spot-btn--ghost">
-          Turn Attention Into Action →
-        </SpotButton>
+        </div>
       </div>
     </>
   )
