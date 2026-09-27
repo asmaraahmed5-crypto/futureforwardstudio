@@ -27,7 +27,7 @@ export default function NavBar() {
   return (
     <header className="site-header">
       <a href="#home" className="nav-logo-link">
-        <img src="/logo-horizontal.png" alt="Future Forward Studio" className="nav-logo" />
+        <img src="/logo-horizontal.png" alt="Future Forward Studio" className="nav-logo" width="300" height="100" />
       </a>
 
       <NavPrimitive.Root className="nav-root" delayDuration={100} style={{ position: 'static' }}>

@@ -9,7 +9,7 @@ const POSTS = [
     excerpt: 'The biggest win AI gives marketers isn\'t doing things faster. It\'s finally understanding what\'s actually working and why.',
     date: 'Sep 18, 2026',
     readTime: '5 min read',
-    img: 'https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&h=500&fit=crop&q=80',
+    img: 'https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&h=500&fit=crop&q=75&fm=webp',
     alt: 'AI marketing strategy',
   },
   {
@@ -18,7 +18,7 @@ const POSTS = [
     excerpt: 'AI-generated content doesn\'t have to be generic. Here\'s how to use it as a starting point, not an endpoint.',
     date: 'Sep 10, 2026',
     readTime: '7 min read',
-    img: 'https://images.unsplash.com/photo-1542744174-a35e40ade835?w=800&h=500&fit=crop&q=80',
+    img: 'https://images.unsplash.com/photo-1542744174-a35e40ade835?w=800&h=500&fit=crop&q=75&fm=webp',
     alt: 'Content marketing',
   },
   {
@@ -27,7 +27,7 @@ const POSTS = [
     excerpt: 'Automating a broken process just makes it break faster. Start with the strategy, then bring in the automation.',
     date: 'Sep 3, 2026',
     readTime: '6 min read',
-    img: 'https://images.unsplash.com/photo-1707762890671-52ef6d6f51e7?w=800&h=500&fit=crop&q=80',
+    img: 'https://images.unsplash.com/photo-1707762890671-52ef6d6f51e7?w=800&h=500&fit=crop&q=75&fm=webp',
     alt: 'Marketing automation workflow',
   },
 ]

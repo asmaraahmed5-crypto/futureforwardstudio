@@ -6,22 +6,22 @@ import './ShuffleCta.css'
 const UNS = 'https://images.unsplash.com/photo'
 
 const IMAGES = [
-  { id: 1,  src: `${UNS}-1496181133206-80ce9b88a853?w=300&h=300&fit=crop&q=80` },
-  { id: 2,  src: `${UNS}-1522071820081-009f0129c71c?w=300&h=300&fit=crop&q=80` },
-  { id: 3,  src: `${UNS}-1485827404703-89b55fcc595e?w=300&h=300&fit=crop&q=80` },
-  { id: 4,  src: `${UNS}-1451187580459-43490279c0fa?w=300&h=300&fit=crop&q=80` },
-  { id: 5,  src: `${UNS}-1518770660439-4636190af475?w=300&h=300&fit=crop&q=80` },
-  { id: 6,  src: `${UNS}-1553877522-43269d4ea984?w=300&h=300&fit=crop&q=80` },
-  { id: 7,  src: `${UNS}-1573164713988-8665fc963095?w=300&h=300&fit=crop&q=80` },
-  { id: 8,  src: `${UNS}-1600880292203-757bb62b4baf?w=300&h=300&fit=crop&q=80` },
-  { id: 9,  src: `${UNS}-1623282033815-40b05d96c903?w=300&h=300&fit=crop&q=80` },
-  { id: 10, src: `${UNS}-1611532736597-de2d4265fba3?w=300&h=300&fit=crop&q=80` },
-  { id: 11, src: `${UNS}-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&q=80` },
-  { id: 12, src: `${UNS}-1531297484001-80022131f5a1?w=300&h=300&fit=crop&q=80` },
-  { id: 13, src: `${UNS}-1545987796-200677ee1011?w=300&h=300&fit=crop&q=80` },
-  { id: 14, src: `${UNS}-1620121692029-d088224ddc74?w=300&h=300&fit=crop&q=80` },
-  { id: 15, src: `${UNS}-1620712943543-bcc4688e7485?w=300&h=300&fit=crop&q=80` },
-  { id: 16, src: `${UNS}-1633356122102-3fe601e05bd2?w=300&h=300&fit=crop&q=80` },
+  { id: 1,  src: `${UNS}-1496181133206-80ce9b88a853?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 2,  src: `${UNS}-1522071820081-009f0129c71c?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 3,  src: `${UNS}-1485827404703-89b55fcc595e?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 4,  src: `${UNS}-1451187580459-43490279c0fa?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 5,  src: `${UNS}-1518770660439-4636190af475?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 6,  src: `${UNS}-1553877522-43269d4ea984?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 7,  src: `${UNS}-1573164713988-8665fc963095?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 8,  src: `${UNS}-1600880292203-757bb62b4baf?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 9,  src: `${UNS}-1623282033815-40b05d96c903?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 10, src: `${UNS}-1611532736597-de2d4265fba3?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 11, src: `${UNS}-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 12, src: `${UNS}-1531297484001-80022131f5a1?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 13, src: `${UNS}-1545987796-200677ee1011?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 14, src: `${UNS}-1620121692029-d088224ddc74?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 15, src: `${UNS}-1620712943543-bcc4688e7485?w=300&h=300&fit=crop&q=75&fm=webp` },
+  { id: 16, src: `${UNS}-1633356122102-3fe601e05bd2?w=300&h=300&fit=crop&q=75&fm=webp` },
 ]
 
 function shuffle(arr) {

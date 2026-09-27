@@ -21,15 +21,15 @@ const CDN = 'https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev'
 const UNS = 'https://images.unsplash.com/photo'
 
 const HERO_IMAGES = [
-  { src: `${UNS}-1750365920056-d4b4ca73fbaa?w=400&h=560&fit=crop&q=75`, alt: 'AI marketing strategy' },
-  { src: `${CDN}/gradients/hero_gradient/hero-gradients-01.png`,         alt: '' },
-  { src: `${UNS}-1677212004257-103cfa6b59d0?w=400&h=560&fit=crop&q=75`, alt: 'AI automation' },
-  { src: `${UNS}-1707762890671-52ef6d6f51e7?w=400&h=560&fit=crop&q=75`, alt: 'Marketing analytics dashboard' },
-  { src: `${CDN}/gradients/hue-flow/hue-flow-01.png`,                   alt: '' },
-  { src: `${UNS}-1542744174-a35e40ade835?w=400&h=560&fit=crop&q=75`,   alt: 'Marketing strategy planning' },
-  { src: `${UNS}-1759393852314-59dc00faeed3?w=400&h=560&fit=crop&q=75`, alt: 'Content creation' },
-  { src: `${CDN}/gradients/moon/moon-grade-03.png`,                      alt: '' },
-  { src: `${UNS}-1748439281934-2803c6a3ee36?w=400&h=560&fit=crop&q=75`, alt: 'Data analytics' },
+  { src: `${UNS}-1750365920056-d4b4ca73fbaa?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'AI marketing strategy' },
+  { src: `${CDN}/gradients/hero_gradient/hero-gradients-01.png`,                 alt: '' },
+  { src: `${UNS}-1677212004257-103cfa6b59d0?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'AI automation' },
+  { src: `${UNS}-1707762890671-52ef6d6f51e7?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'Marketing analytics dashboard' },
+  { src: `${CDN}/gradients/hue-flow/hue-flow-01.png`,                            alt: '' },
+  { src: `${UNS}-1542744174-a35e40ade835?w=400&h=560&fit=crop&q=75&fm=webp`,    alt: 'Marketing strategy planning' },
+  { src: `${UNS}-1759393852314-59dc00faeed3?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'Content creation' },
+  { src: `${CDN}/gradients/moon/moon-grade-03.png`,                               alt: '' },
+  { src: `${UNS}-1748439281934-2803c6a3ee36?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'Data analytics' },
 ]
 
 const SERVICES = [
@@ -134,10 +134,10 @@ function App() {
             <div className="spotlight__visual">
               <div className="spotlight__glow" />
               <img
-                src="https://images.unsplash.com/photo-1617751218806-9077a9093d8b?w=700&h=875&fit=crop&q=85"
+                src="https://images.unsplash.com/photo-1617751218806-9077a9093d8b?w=500&h=875&fit=crop&q=75&fm=webp"
                 alt="Abstract neon light waves"
                 className="spotlight__img"
-                width="700" height="875"
+                width="500" height="875"
                 loading="lazy"
               />
             </div>
@@ -151,10 +151,10 @@ function App() {
             <div className="rc-visual">
               <div className="rc-visual__glow" />
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=680&fit=crop&q=85"
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=534&h=680&fit=crop&q=75&fm=webp"
                 alt="Marketing analytics dashboard"
                 className="rc-img"
-                width="900" height="680"
+                width="534" height="680"
                 loading="lazy"
               />
             </div>
@@ -201,21 +201,21 @@ function App() {
                   role: 'AI brings',
                   title: 'the horsepower.',
                   desc: 'Analyse data, identify patterns, accelerate content, automate tasks, and optimise campaigns at scale.',
-                  img: 'https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&h=450&fit=crop&q=85',
+                  img: 'https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&h=450&fit=crop&q=75&fm=webp',
                   alt: 'AI data processing',
                 },
                 {
                   role: 'We bring',
                   title: 'the steering wheel.',
                   desc: 'We decide what matters, where to focus, and how everything connects back to your business goals.',
-                  img: 'https://images.unsplash.com/photo-1542744174-a35e40ade835?w=800&h=450&fit=crop&q=85',
+                  img: 'https://images.unsplash.com/photo-1542744174-a35e40ade835?w=800&h=450&fit=crop&q=75&fm=webp',
                   alt: 'Marketing strategy planning',
                 },
                 {
                   role: 'You get',
                   title: 'the destination.',
                   desc: 'Efficient marketing. Better customer journeys. Smarter campaigns. A clearer path to growth.',
-                  img: 'https://images.unsplash.com/photo-1707762890671-52ef6d6f51e7?w=800&h=450&fit=crop&q=85',
+                  img: 'https://images.unsplash.com/photo-1707762890671-52ef6d6f51e7?w=800&h=450&fit=crop&q=75&fm=webp',
                   alt: 'Business growth results',
                 },
               ].map((card) => (
@@ -308,7 +308,7 @@ function App() {
       <footer className="site-footer">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/logo-horizontal.png" alt="Future Forward Studio" className="footer-logo" />
+            <img src="/logo-horizontal.png" alt="Future Forward Studio" className="footer-logo" width="300" height="100" />
             <p className="footer-desc">
               AI-powered marketing agency helping ambitious businesses turn artificial intelligence into better marketing, smarter decisions, and real growth.
             </p>

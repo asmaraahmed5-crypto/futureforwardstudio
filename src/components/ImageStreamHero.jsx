@@ -99,7 +99,8 @@ export function ImageStreamHero({
                     <img
                       src={img.src}
                       alt={img.alt ?? ''}
-                      loading="lazy"
+                      loading={i === 0 && name === right ? 'eager' : 'lazy'}
+                      fetchpriority={i === 0 && name === right ? 'high' : 'auto'}
                       decoding="async"
                       className="ish-img"
                       draggable={false}
