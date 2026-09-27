@@ -112,7 +112,7 @@ export function JourneyTimeline() {
 
           {/* ── Pinned header ── */}
           <div className="jt-head">
-            <p className="jt-eyebrow" style={{ color: ACTIVE }}>06 — The Journey</p>
+            <p className="jt-eyebrow" style={{ color: ACTIVE }}>07 — The Journey</p>
             <h2 ref={titleRef} className="jt-h2" style={{ color: TEXT }}>
               from "who are they?"<br />to "take my money."
             </h2>

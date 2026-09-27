@@ -71,7 +71,7 @@ export function WhoWeWorkWith() {
 
         {/* Header */}
         <div className="wwww__header">
-          <span className="label section-eyebrow">07 — Who We Work With</span>
+          <span className="label section-eyebrow">08 — Who We Work With</span>
           <h2>built for businesses that<br />refuse to stand still.</h2>
         </div>
 

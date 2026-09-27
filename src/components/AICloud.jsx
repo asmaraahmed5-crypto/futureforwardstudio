@@ -27,7 +27,7 @@ export function AICloud() {
 
         {/* ── Right: content + steps ── */}
         <div className="ai-cloud__content">
-          <span className="label section-eyebrow ai-cloud__eyebrow">05 — AI Marketing Cloud</span>
+          <span className="label section-eyebrow ai-cloud__eyebrow">06 — AI Marketing Cloud</span>
 
           <h2 className="ai-cloud__h2">
             say hello to your<br />ai marketing cloud.
