@@ -57,20 +57,20 @@
   flex-shrink: 0;
 }
 
-.wwww__card-title {
+.wwww__card .wwww__card-title {
   font-family: var(--font-sans);
   font-size: clamp(16px, 1.4vw, 20px);
   font-weight: 700;
-  color: #ffffff;
+  color: #ffffff !important;
   margin: 0 0 10px;
   line-height: 1.2;
 }
 
-.wwww__card-desc {
+.wwww__card .wwww__card-desc {
   font-family: var(--font-sans);
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.75) !important;
   margin: 0;
   flex: 1;
 }
