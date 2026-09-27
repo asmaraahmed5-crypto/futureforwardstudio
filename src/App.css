@@ -286,7 +286,7 @@
   font-weight: 500;
 }
 
-.section--dark  .section-eyebrow { color: #888; }
+.section--dark  .section-eyebrow { color: #ffffff; }
 .section--light .section-eyebrow { color: #606060; }
 
 .section__sub {
@@ -319,10 +319,10 @@
   text-transform: uppercase;
 }
 
-.section--dark  .label { color: #888; }
+.section--dark  .label { color: #ffffff; }
 .section--light .label { color: #606060; }
 .services-strip .label,
-.hero .label     { color: var(--steel); }
+.hero .label     { color: #ffffff; }
 
 /* ─────────────────────────────────────────
    Reality Check Section (02 — dark)
@@ -567,9 +567,9 @@
 .service-card__img  { width: 100%; }
 .service-card__body { padding: clamp(20px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 10px; }
 
-.service-card__num { color: #333; display: block; }
+.service-card__num { color: rgba(255,255,255,0.35); display: block; }
 .service-card h3   { font-size: clamp(16px, 1.6vw, 19px); line-height: 1.3; color: var(--white); }
-.service-card p    { font-size: 14px; line-height: 1.65; color: var(--steel); }
+.service-card p    { font-size: 14px; line-height: 1.65; color: #ffffff; }
 
 /* ─────────────────────────────────────────
    AI Cloud (section 05 — light)
@@ -664,7 +664,7 @@
 }
 
 .philosophy-sub {
-  color: var(--steel);
+  color: #ffffff;
   font-size: clamp(15px, 1.5vw, 18px);
   max-width: 50ch;
   line-height: 1.6;
@@ -684,7 +684,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--steel);
+  color: #ffffff;
 }
 
 .philosophy-pillar--accent { color: var(--white); font-size: clamp(14px, 1.4vw, 17px); }
@@ -720,14 +720,14 @@
 
 .footer-brand  { display: flex; flex-direction: column; gap: 20px; }
 .footer-logo   { height: 28px; width: auto; opacity: 0.7; }
-.footer-desc   { font-size: 14px; color: var(--steel); line-height: 1.7; max-width: 30ch; }
+.footer-desc   { font-size: 14px; color: #ffffff; line-height: 1.7; max-width: 30ch; }
 
 .footer-social { display: flex; gap: 12px; margin-top: 4px; }
 .social-link {
   width: 36px; height: 36px;
   border: 1px solid #2a2a2a;
   display: flex; align-items: center; justify-content: center;
-  color: var(--steel);
+  color: #ffffff;
   transition: color 0.2s, border-color 0.2s;
 }
 .social-link:hover { color: var(--white); border-color: var(--steel); }
@@ -739,16 +739,16 @@
 }
 
 .footer-col { display: flex; flex-direction: column; gap: 16px; }
-.footer-col__heading { color: var(--steel); display: block; font-size: 10px; letter-spacing: 0.22em; font-weight: 500; }
+.footer-col__heading { color: #ffffff; display: block; font-size: 10px; letter-spacing: 0.22em; font-weight: 500; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { font-size: 14px; color: #555; transition: color 0.2s; line-height: 1.4; }
+.footer-col ul a { font-size: 14px; color: #ffffff; transition: color 0.2s; line-height: 1.4; }
 .footer-col ul a:hover { color: var(--white); }
 
 .footer-contact { display: flex; flex-direction: column; gap: 16px !important; }
 .footer-contact li { display: flex; flex-direction: column; gap: 4px; }
-.footer-contact .label { color: #333; font-size: 10px; letter-spacing: 0.2em; display: block; }
+.footer-contact .label { color: #ffffff; font-size: 10px; letter-spacing: 0.2em; display: block; }
 .footer-contact a,
-.footer-contact span:not(.label):not(.status-dot) { font-size: 13px; color: #555; transition: color 0.2s; }
+.footer-contact span:not(.label):not(.status-dot) { font-size: 13px; color: #ffffff; transition: color 0.2s; }
 .footer-contact a:hover { color: var(--white); }
 
 .footer-status { display: flex; align-items: center; gap: 8px; }
@@ -767,10 +767,10 @@
   width: 100%;
 }
 
-.footer-bottom > span:first-child { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: #333; }
-.footer-bottom__tagline            { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #2a2a2a; text-align: center; white-space: nowrap; }
+.footer-bottom > span:first-child { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: #ffffff; }
+.footer-bottom__tagline            { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffffff; text-align: center; white-space: nowrap; }
 .footer-legal { display: flex; gap: 20px; justify-content: flex-end; }
-.footer-legal a { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: #333; transition: color 0.2s; }
+.footer-legal a { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: #ffffff; transition: color 0.2s; }
 .footer-legal a:hover { color: var(--steel); }
 
 /* ─────────────────────────────────────────

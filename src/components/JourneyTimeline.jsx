@@ -36,8 +36,8 @@ const TOP_ITEMS = [
 
 const BG     = '#050505'
 const TEXT   = '#ffffff'
-const MUTED  = '#a1a1aa'
-const ACTIVE = '#5b21b6'
+const MUTED  = '#ffffff'
+const ACTIVE = '#ffffff'
 
 function useReducedMotion() {
   return useSyncExternalStore(
