@@ -36,37 +36,37 @@ const AUDIENCE = [
   },
 ]
 
-// Brand-purple shader configs for each card
+// Original prompt shader configs
 const SHADER_CONFIGS = [
   {
-    proportion: 0.35, softness: 0.9,  distortion: 0.18, swirl: 0.7,  swirlIterations: 10, shape: 'checks', shapeScale: 0.09,
-    colors: ['hsl(265,68%,20%)', 'hsl(263,84%,45%)', 'hsl(275,70%,32%)', 'hsl(280,60%,55%)'],
+    proportion: 0.30, softness: 0.8,  distortion: 0.15, swirl: 0.6,  swirlIterations: 8,  shape: 'checks', shapeScale: 0.08,
+    colors: ['hsl(280,100%,30%)', 'hsl(320,100%,60%)', 'hsl(340,90%,40%)', 'hsl(300,100%,70%)'],
   },
   {
-    proportion: 0.40, softness: 1.1,  distortion: 0.20, swirl: 0.85, swirlIterations: 12, shape: 'dots',   shapeScale: 0.11,
-    colors: ['hsl(265,68%,16%)', 'hsl(270,80%,50%)', 'hsl(255,70%,35%)', 'hsl(285,65%,60%)'],
+    proportion: 0.40, softness: 1.2,  distortion: 0.20, swirl: 0.9,  swirlIterations: 12, shape: 'dots',   shapeScale: 0.12,
+    colors: ['hsl(200,100%,25%)', 'hsl(180,100%,65%)', 'hsl(160,90%,35%)', 'hsl(190,100%,75%)'],
   },
   {
-    proportion: 0.30, softness: 0.85, distortion: 0.15, swirl: 0.65, swirlIterations: 8,  shape: 'checks', shapeScale: 0.08,
-    colors: ['hsl(258,80%,18%)', 'hsl(265,75%,48%)', 'hsl(275,68%,28%)', 'hsl(260,55%,58%)'],
+    proportion: 0.35, softness: 0.9,  distortion: 0.18, swirl: 0.7,  swirlIterations: 10, shape: 'checks', shapeScale: 0.10,
+    colors: ['hsl(120,100%,25%)', 'hsl(140,100%,60%)', 'hsl(100,90%,30%)', 'hsl(130,100%,70%)'],
   },
   {
-    proportion: 0.42, softness: 1.0,  distortion: 0.22, swirl: 0.80, swirlIterations: 14, shape: 'dots',   shapeScale: 0.12,
-    colors: ['hsl(270,72%,22%)', 'hsl(278,78%,52%)', 'hsl(262,68%,38%)', 'hsl(288,60%,62%)'],
+    proportion: 0.45, softness: 1.1,  distortion: 0.22, swirl: 0.8,  swirlIterations: 15, shape: 'dots',   shapeScale: 0.09,
+    colors: ['hsl(30,100%,35%)',  'hsl(50,100%,65%)',  'hsl(40,90%,40%)',  'hsl(45,100%,75%)'],
   },
   {
-    proportion: 0.38, softness: 0.95, distortion: 0.17, swirl: 0.75, swirlIterations: 11, shape: 'checks', shapeScale: 0.10,
-    colors: ['hsl(263,78%,18%)', 'hsl(268,82%,46%)', 'hsl(252,70%,32%)', 'hsl(276,65%,58%)'],
+    proportion: 0.38, softness: 0.95, distortion: 0.16, swirl: 0.85, swirlIterations: 11, shape: 'checks', shapeScale: 0.11,
+    colors: ['hsl(250,100%,30%)', 'hsl(270,100%,65%)', 'hsl(260,90%,35%)', 'hsl(265,100%,70%)'],
   },
   {
-    proportion: 0.44, softness: 1.05, distortion: 0.21, swirl: 0.90, swirlIterations: 13, shape: 'dots',   shapeScale: 0.13,
-    colors: ['hsl(268,75%,20%)', 'hsl(272,80%,50%)', 'hsl(260,72%,36%)', 'hsl(282,62%,60%)'],
+    proportion: 0.42, softness: 1.0,  distortion: 0.19, swirl: 0.75, swirlIterations: 9,  shape: 'dots',   shapeScale: 0.13,
+    colors: ['hsl(330,100%,30%)', 'hsl(350,100%,60%)', 'hsl(340,90%,35%)', 'hsl(345,100%,75%)'],
   },
 ]
 
 export function WhoWeWorkWith() {
   return (
-    <section className="section section--dark wwww" id="about">
+    <section className="section section--light wwww" id="about">
       <div className="section__inner">
 
         {/* Header */}
@@ -117,7 +117,7 @@ export function WhoWeWorkWith() {
 
         {/* CTA */}
         <div className="section__cta-row">
-          <SpotButton href="#contact" className="spot-btn--ghost">
+          <SpotButton href="#contact" className="spot-btn--dark">
             Talk to Future Forward Studio →
           </SpotButton>
         </div>
