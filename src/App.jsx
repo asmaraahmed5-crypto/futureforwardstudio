@@ -6,6 +6,7 @@ import { ShuffleCta } from './components/ShuffleCta'
 import { SkewCards } from './components/SkewCards'
 import { JourneyTimeline } from './components/JourneyTimeline'
 import { AICloud } from './components/AICloud'
+import { WhoWeWorkWith } from './components/WhoWeWorkWith'
 import { Sparkles, ArrowRight } from 'lucide-react'
 
 const CDN = 'https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev'
@@ -245,29 +246,8 @@ function App() {
         {/* ── 06 Journey (dark) ── */}
         <JourneyTimeline />
 
-        {/* ── 07 Who It's For (light) ── */}
-        <section className="section section--light" id="about">
-          <div className="section__inner">
-            <div className="section__heading-row">
-              <span className="label section-eyebrow">07 — Who We Work With</span>
-            </div>
-            <h2>built for businesses that<br />refuse to stand still.</h2>
-            <div className="audience-grid">
-              {WHO_ITS_FOR.map((a) => (
-                <div key={a.label} className="audience-card audience-card--light">
-                  <div className="audience-card__img"><ImgPh ratio="3/2" label={a.label} /></div>
-                  <div className="audience-card__body">
-                    <h3>{a.label.toLowerCase()}</h3>
-                    <p>{a.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="section__cta-row">
-              <SpotButton href="#contact" className="spot-btn--dark">Talk to Future Forward Studio →</SpotButton>
-            </div>
-          </div>
-        </section>
+        {/* ── 07 Who It's For (dark — shader cards) ── */}
+        <WhoWeWorkWith />
 
         {/* ── Philosophy (dark) ── */}
         <section className="section section--dark section--philosophy">
