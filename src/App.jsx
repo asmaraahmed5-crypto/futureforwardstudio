@@ -5,6 +5,7 @@ import { SpotButton } from './components/SpotButton'
 import { ShuffleCta } from './components/ShuffleCta'
 import { SkewCards } from './components/SkewCards'
 import { JourneyTimeline } from './components/JourneyTimeline'
+import { AICloud } from './components/AICloud'
 import { Sparkles, ArrowRight } from 'lucide-react'
 
 const CDN = 'https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev'
@@ -239,29 +240,7 @@ function App() {
         </section>
 
         {/* ── 05 AI Cloud (light) ── */}
-        <section className="section section--light" id="cloud">
-          <div className="section__inner">
-            <div className="section__heading-row">
-              <span className="label section-eyebrow">05 — AI Marketing Cloud</span>
-            </div>
-            <h2>say hello to your<br />ai marketing cloud.</h2>
-            <p className="section__sub section__sub--dark">Your marketing's new command center — one connected environment, less jumping between tools, and more <em>"Okay, now we know what to do."</em></p>
-            <div className="cloud-hero-img">
-              <ImgPh ratio="21/9" label="AI Marketing Cloud dashboard" />
-            </div>
-            <div className="cloud-grid">
-              {CLOUD_FEATURES.map((f) => (
-                <div key={f.title} className="cloud-card cloud-card--light">
-                  <h3>{f.title.toLowerCase()}</h3>
-                  <p>{f.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="section__cta-row">
-              <SpotButton href="#contact" className="spot-btn--dark">Explore AI Marketing Cloud →</SpotButton>
-            </div>
-          </div>
-        </section>
+        <AICloud />
 
         {/* ── 06 Journey (dark) ── */}
         <JourneyTimeline />
