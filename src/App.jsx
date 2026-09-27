@@ -250,9 +250,6 @@ function App() {
         {/* ── 07 Who It's For (dark — shader cards) ── */}
         <WhoWeWorkWith />
 
-        {/* ── FAQs (light) ── */}
-        <FAQ />
-
         {/* ── Philosophy (dark) ── */}
         <section className="section section--dark section--philosophy">
           <div className="section__inner section__inner--centered">
@@ -268,6 +265,9 @@ function App() {
             </div>
           </div>
         </section>
+
+        {/* ── FAQs (light) ── */}
+        <FAQ />
 
         {/* ── Final CTA (light) ── */}
         <section className="section section--light section--cta" id="contact">
