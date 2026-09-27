@@ -42,7 +42,7 @@ export function FAQ() {
   const [open, setOpen] = useState(null)
 
   return (
-    <section className="section section--light faq" id="faq">
+    <section className="section section--dark faq" id="faq">
       <div className="section__inner">
 
         <div className="faq__header">

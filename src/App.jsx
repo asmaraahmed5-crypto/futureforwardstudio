@@ -7,6 +7,7 @@ import { SkewCards } from './components/SkewCards'
 import { JourneyTimeline } from './components/JourneyTimeline'
 import { AICloud } from './components/AICloud'
 import { WhoWeWorkWith } from './components/WhoWeWorkWith'
+import { Testimonials } from './components/Testimonials'
 import { FAQ } from './components/FAQ'
 import { Sparkles, ArrowRight } from 'lucide-react'
 
@@ -266,7 +267,10 @@ function App() {
           </div>
         </section>
 
-        {/* ── FAQs (light) ── */}
+        {/* ── Testimonials (dark) ── */}
+        <Testimonials />
+
+        {/* ── FAQs (dark) ── */}
         <FAQ />
 
         {/* ── Final CTA (light) ── */}
