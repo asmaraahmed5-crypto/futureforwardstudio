@@ -15,7 +15,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 44px 60px 0;
+  justify-content: space-between;
+  padding: 52px 60px 0;
   box-sizing: border-box;
 }
 
@@ -25,7 +26,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-bottom: 24px;
 }
 
 .jt-eyebrow {
@@ -174,7 +174,7 @@
 /* ── Big statement block ── */
 .jt-statement {
   flex-shrink: 0;
-  padding: 36px 0 32px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -196,13 +196,12 @@
   font-style: italic;
 }
 
-/* ── CTA — anchors to bottom of sticky via margin-top: auto ── */
+/* ── CTA ── */
 .jt-cta {
-  margin-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 24px 40px;
+  padding: 0 24px 40px;
 }
 
 /* ── Mobile ── */
