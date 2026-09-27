@@ -70,10 +70,10 @@ export function WhoWeWorkWith() {
       <div className="section__inner">
 
         {/* Header */}
-        <div className="section__heading-row">
+        <div className="wwww__header">
           <span className="label section-eyebrow">07 — Who We Work With</span>
+          <h2>built for businesses that<br />refuse to stand still.</h2>
         </div>
-        <h2>built for businesses that<br />refuse to stand still.</h2>
 
         {/* Shader cards grid */}
         <div className="wwww__grid">

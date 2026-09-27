@@ -1,5 +1,10 @@
 /* ── Who We Work With ─────────────────────────────────── */
 
+.wwww__header {
+  text-align: center;
+  margin-bottom: 0;
+}
+
 .wwww .section__cta-row {
   display: flex;
   justify-content: center;
