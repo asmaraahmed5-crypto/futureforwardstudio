@@ -1,0 +1,75 @@
+/* ── Client Logos ─────────────────────────────────────── */
+
+.client-logos {
+  background: #050505;
+  padding: 28px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.client-logos__label {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0 20px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.client-logos__track-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.client-logos__track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: logo-scroll 28s linear infinite;
+}
+
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.client-logos__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 48px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.client-logos__abbr {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.50);
+  flex-shrink: 0;
+}
+
+.client-logos__name {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.40);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 600px) {
+  .client-logos__item {
+    padding: 0 32px;
+  }
+}

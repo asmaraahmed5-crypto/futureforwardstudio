@@ -7,7 +7,10 @@ import { SkewCards } from './components/SkewCards'
 import { JourneyTimeline } from './components/JourneyTimeline'
 import { AICloud } from './components/AICloud'
 import { WhoWeWorkWith } from './components/WhoWeWorkWith'
+import { ClientLogos } from './components/ClientLogos'
+import { CaseStudies } from './components/CaseStudies'
 import { Testimonials } from './components/Testimonials'
+import { LatestBlogs } from './components/LatestBlogs'
 import { FAQ } from './components/FAQ'
 import { Sparkles, ArrowRight } from 'lucide-react'
 
@@ -105,6 +108,9 @@ function App() {
           </div>
         </ImageStreamHero>
 
+
+        {/* ── Client Logos (dark marquee) ── */}
+        <ClientLogos />
 
         {/* ── 01 Value Prop — Spotlight ── */}
         <section className="section section--light spotlight" id="about">
@@ -242,7 +248,10 @@ function App() {
           </div>
         </section>
 
-        {/* ── 05 AI Cloud (light) ── */}
+        {/* ── 05 Case Studies (light) ── */}
+        <CaseStudies />
+
+        {/* ── 06 AI Cloud (light) ── */}
         <AICloud />
 
         {/* ── 06 Journey (dark) ── */}
@@ -267,8 +276,11 @@ function App() {
           </div>
         </section>
 
-        {/* ── Testimonials (dark) ── */}
+        {/* ── Testimonials (light) ── */}
         <Testimonials />
+
+        {/* ── Latest Blogs (light) ── */}
+        <LatestBlogs />
 
         {/* ── FAQs (dark) ── */}
         <FAQ />
