@@ -7,6 +7,7 @@ import { SkewCards } from './components/SkewCards'
 import { JourneyTimeline } from './components/JourneyTimeline'
 import { AICloud } from './components/AICloud'
 import { WhoWeWorkWith } from './components/WhoWeWorkWith'
+import { FAQ } from './components/FAQ'
 import { Sparkles, ArrowRight } from 'lucide-react'
 
 const CDN = 'https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev'
@@ -248,6 +249,9 @@ function App() {
 
         {/* ── 07 Who It's For (dark — shader cards) ── */}
         <WhoWeWorkWith />
+
+        {/* ── FAQs (light) ── */}
+        <FAQ />
 
         {/* ── Philosophy (dark) ── */}
         <section className="section section--dark section--philosophy">
