@@ -41,7 +41,7 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section className="section section--dark testimonials" id="testimonials">
+    <section className="section section--light testimonials" id="testimonials">
       <div className="section__inner">
 
         <div className="testimonials__header">
