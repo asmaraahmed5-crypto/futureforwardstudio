@@ -53,7 +53,7 @@ export function CaseStudies() {
           {CASES.map(({ tag, title, result, metric, img, alt }, i) => (
             <article key={i} className={`cs-card${i === 0 ? ' cs-card--featured' : ''}`}>
               <div className="cs-card__img-wrap">
-                <img src={img} alt={alt} className="cs-card__img" />
+                <img src={img} alt={alt} className="cs-card__img" width="800" height="520" loading="lazy" />
                 <div className="cs-card__metrics">
                   <span className="cs-card__metric">{result}</span>
                   <span className="cs-card__metric">{metric}</span>

@@ -72,7 +72,7 @@ export default function NavBar() {
               <div className="nav-panel nav-panel--cloud">
                 <div className="nav-cloud-feature">
                   <span className="label">AI Marketing Cloud</span>
-                  <h3>your marketing's<br />command center.</h3>
+                  <p className="nav-cloud-feature__title">your marketing's<br />command center.</p>
                   <p>One connected environment. Less jumping between tools.</p>
                   <a href="#cloud" className="btn btn--primary btn--sm">Explore Cloud →</a>
                 </div>

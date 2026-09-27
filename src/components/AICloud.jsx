@@ -22,6 +22,8 @@ export function AICloud() {
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=1400&fit=crop&q=80"
             alt="AI marketing cloud dashboard"
             className="ai-cloud__img"
+            width="900" height="1400"
+            loading="lazy"
           />
         </div>
 

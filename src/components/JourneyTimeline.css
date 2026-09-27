@@ -137,6 +137,7 @@
 .jt-item-title {
   font-family: var(--font-sans);
   font-size: clamp(15px, 1.75vw, 26px);
+  margin: 0;
   font-weight: 700;
   line-height: 1.1;
   margin: 0;

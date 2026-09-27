@@ -69,7 +69,7 @@
 .blog-card__category {
   font-size: 10px;
   letter-spacing: 0.12em;
-  color: #888;
+  color: #606060;
 }
 
 .blog-card__title {
@@ -113,7 +113,7 @@
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #aaa;
+  color: #666;
 }
 
 .blog-card__read {

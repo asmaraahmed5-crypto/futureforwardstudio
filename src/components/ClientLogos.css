@@ -10,7 +10,7 @@
 
 .client-logos__label {
   text-align: center;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.55);
   margin: 0 0 20px;
   font-size: 10px;
   letter-spacing: 0.16em;
@@ -64,7 +64,7 @@
   font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.40);
+  color: rgba(255, 255, 255, 0.62);
   letter-spacing: -0.01em;
 }
 

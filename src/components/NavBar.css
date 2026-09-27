@@ -245,10 +245,13 @@
   font-family: var(--font-sans);
 }
 
-.nav-cloud-feature h3 {
+.nav-cloud-feature h3,
+.nav-cloud-feature__title {
   font-size: 18px;
   line-height: 1.2;
   color: var(--fg);
+  font-weight: 600;
+  margin: 0;
 }
 
 .nav-cloud-feature p {

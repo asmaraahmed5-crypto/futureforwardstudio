@@ -51,7 +51,7 @@ export function LatestBlogs() {
           {POSTS.map(({ category, title, excerpt, date, readTime, img, alt }) => (
             <article key={title} className="blog-card">
               <a href="#blog" className="blog-card__img-link">
-                <img src={img} alt={alt} className="blog-card__img" />
+                <img src={img} alt={alt} className="blog-card__img" width="700" height="440" loading="lazy" />
               </a>
               <div className="blog-card__body">
                 <span className="blog-card__category label">{category}</span>

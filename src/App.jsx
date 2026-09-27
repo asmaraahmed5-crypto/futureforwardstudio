@@ -138,6 +138,8 @@ function App() {
                 src="https://images.unsplash.com/photo-1617751218806-9077a9093d8b?w=700&h=875&fit=crop&q=85"
                 alt="Abstract neon light waves"
                 className="spotlight__img"
+                width="700" height="875"
+                loading="lazy"
               />
             </div>
           </div>
@@ -153,6 +155,8 @@ function App() {
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=680&fit=crop&q=85"
                 alt="Marketing analytics dashboard"
                 className="rc-img"
+                width="900" height="680"
+                loading="lazy"
               />
             </div>
 
@@ -217,7 +221,7 @@ function App() {
                 },
               ].map((card) => (
                 <div key={card.role} className="hw-card">
-                  <img src={card.img} alt={card.alt} className="hw-card__img" />
+                  <img src={card.img} alt={card.alt} className="hw-card__img" width="800" height="450" loading="lazy" />
                   <div className="hw-card__body">
                     <span className="label hw-card__role">{card.role}</span>
                     <h3 className="hw-card__title">{card.title}</h3>

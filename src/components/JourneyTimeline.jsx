@@ -139,7 +139,7 @@ export function JourneyTimeline() {
                     <span className="jt-item-num" style={{ color: MUTED }}>{item.num}</span>
                     {/* Title + desc pinned to bottom of text area */}
                     <div className="jt-item-body">
-                      <h4 className="jt-item-title" style={{ color: TEXT }}>{item.label}</h4>
+                      <h3 className="jt-item-title" style={{ color: TEXT }}>{item.label}</h3>
                       <p className="jt-item-desc" style={{ color: MUTED }}>{item.content}</p>
                     </div>
                   </div>
