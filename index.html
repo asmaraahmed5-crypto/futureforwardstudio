@@ -8,7 +8,12 @@
     <title>Future Forward Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev" />
+    <!-- Non-render-blocking font load -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>

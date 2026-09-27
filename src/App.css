@@ -286,8 +286,8 @@
   font-weight: 500;
 }
 
-.section--dark  .section-eyebrow { color: var(--steel); }
-.section--light .section-eyebrow { color: #888; }
+.section--dark  .section-eyebrow { color: #888; }
+.section--light .section-eyebrow { color: #606060; }
 
 .section__sub {
   font-size: clamp(17px, 1.8vw, 21px);
@@ -319,8 +319,8 @@
   text-transform: uppercase;
 }
 
-.section--dark  .label { color: var(--steel); }
-.section--light .label { color: #999; }
+.section--dark  .label { color: #888; }
+.section--light .label { color: #606060; }
 .services-strip .label,
 .hero .label     { color: var(--steel); }
 

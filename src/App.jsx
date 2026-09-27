@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import './App.css'
 import NavBar from './components/NavBar'
 import { ImageStreamHero } from './components/ImageStreamHero'
@@ -6,7 +7,6 @@ import { ShuffleCta } from './components/ShuffleCta'
 import { SkewCards } from './components/SkewCards'
 import { JourneyTimeline } from './components/JourneyTimeline'
 import { AICloud } from './components/AICloud'
-import { WhoWeWorkWith } from './components/WhoWeWorkWith'
 import { ClientLogos } from './components/ClientLogos'
 import { CaseStudies } from './components/CaseStudies'
 import { Testimonials } from './components/Testimonials'
@@ -14,23 +14,22 @@ import { LatestBlogs } from './components/LatestBlogs'
 import { FAQ } from './components/FAQ'
 import { Sparkles, ArrowRight } from 'lucide-react'
 
+const WhoWeWorkWith = lazy(() => import('./components/WhoWeWorkWith').then(m => ({ default: m.WhoWeWorkWith })))
+
 const CDN = 'https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev'
 
 const UNS = 'https://images.unsplash.com/photo'
 
 const HERO_IMAGES = [
-  { src: `${UNS}-1750365920056-d4b4ca73fbaa?w=800&h=1100&fit=crop&q=80`, alt: 'AI marketing strategy' },
-  { src: `${CDN}/gradients/hero_gradient/hero-gradients-01.png`,          alt: '' },
-  { src: `${UNS}-1677212004257-103cfa6b59d0?w=800&h=1100&fit=crop&q=80`, alt: 'AI automation' },
-  { src: `${UNS}-1707762890671-52ef6d6f51e7?w=800&h=1100&fit=crop&q=80`, alt: 'Marketing analytics dashboard' },
-  { src: `${CDN}/gradients/hue-flow/hue-flow-01.png`,                    alt: '' },
-  { src: `${UNS}-1542744174-a35e40ade835?w=800&h=1100&fit=crop&q=80`,   alt: 'Marketing strategy planning' },
-  { src: `${UNS}-1759393852314-59dc00faeed3?w=800&h=1100&fit=crop&q=80`, alt: 'Content creation' },
-  { src: `${CDN}/gradients/moon/moon-grade-03.png`,                       alt: '' },
-  { src: `${UNS}-1777785113207-c0fdd05ae937?w=800&h=1100&fit=crop&q=80`, alt: 'AI advertising' },
-  { src: `${UNS}-1643139863038-7355941e9e89?w=800&h=1100&fit=crop&q=80`, alt: 'Digital technology' },
-  { src: `${UNS}-1586880244406-556ebe35f282?w=800&h=1100&fit=crop&q=80`, alt: 'Digital marketing' },
-  { src: `${UNS}-1748439281934-2803c6a3ee36?w=800&h=1100&fit=crop&q=80`, alt: 'Data analytics' },
+  { src: `${UNS}-1750365920056-d4b4ca73fbaa?w=400&h=560&fit=crop&q=75`, alt: 'AI marketing strategy' },
+  { src: `${CDN}/gradients/hero_gradient/hero-gradients-01.png`,         alt: '' },
+  { src: `${UNS}-1677212004257-103cfa6b59d0?w=400&h=560&fit=crop&q=75`, alt: 'AI automation' },
+  { src: `${UNS}-1707762890671-52ef6d6f51e7?w=400&h=560&fit=crop&q=75`, alt: 'Marketing analytics dashboard' },
+  { src: `${CDN}/gradients/hue-flow/hue-flow-01.png`,                   alt: '' },
+  { src: `${UNS}-1542744174-a35e40ade835?w=400&h=560&fit=crop&q=75`,   alt: 'Marketing strategy planning' },
+  { src: `${UNS}-1759393852314-59dc00faeed3?w=400&h=560&fit=crop&q=75`, alt: 'Content creation' },
+  { src: `${CDN}/gradients/moon/moon-grade-03.png`,                      alt: '' },
+  { src: `${UNS}-1748439281934-2803c6a3ee36?w=400&h=560&fit=crop&q=75`, alt: 'Data analytics' },
 ]
 
 const SERVICES = [
@@ -262,7 +261,9 @@ function App() {
         <JourneyTimeline />
 
         {/* ── 07 Who It's For (dark — shader cards) ── */}
-        <WhoWeWorkWith />
+        <Suspense fallback={null}>
+          <WhoWeWorkWith />
+        </Suspense>
 
         {/* ── Philosophy (dark) ── */}
         <section className="section section--dark section--philosophy">

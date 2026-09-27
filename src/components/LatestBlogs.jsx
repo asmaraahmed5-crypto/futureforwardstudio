@@ -9,7 +9,7 @@ const POSTS = [
     excerpt: 'The biggest win AI gives marketers isn\'t doing things faster. It\'s finally understanding what\'s actually working and why.',
     date: 'Sep 18, 2026',
     readTime: '5 min read',
-    img: 'https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=700&h=440&fit=crop&q=80',
+    img: 'https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&h=500&fit=crop&q=80',
     alt: 'AI marketing strategy',
   },
   {
@@ -18,7 +18,7 @@ const POSTS = [
     excerpt: 'AI-generated content doesn\'t have to be generic. Here\'s how to use it as a starting point, not an endpoint.',
     date: 'Sep 10, 2026',
     readTime: '7 min read',
-    img: 'https://images.unsplash.com/photo-1542744174-a35e40ade835?w=700&h=440&fit=crop&q=80',
+    img: 'https://images.unsplash.com/photo-1542744174-a35e40ade835?w=800&h=500&fit=crop&q=80',
     alt: 'Content marketing',
   },
   {
@@ -27,7 +27,7 @@ const POSTS = [
     excerpt: 'Automating a broken process just makes it break faster. Start with the strategy, then bring in the automation.',
     date: 'Sep 3, 2026',
     readTime: '6 min read',
-    img: 'https://images.unsplash.com/photo-1707762890671-52ef6d6f51e7?w=700&h=440&fit=crop&q=80',
+    img: 'https://images.unsplash.com/photo-1707762890671-52ef6d6f51e7?w=800&h=500&fit=crop&q=80',
     alt: 'Marketing automation workflow',
   },
 ]
@@ -51,7 +51,7 @@ export function LatestBlogs() {
           {POSTS.map(({ category, title, excerpt, date, readTime, img, alt }) => (
             <article key={title} className="blog-card">
               <a href="#blog" className="blog-card__img-link">
-                <img src={img} alt={alt} className="blog-card__img" width="700" height="440" loading="lazy" />
+                <img src={img} alt={alt} className="blog-card__img" width="800" height="500" loading="lazy" />
               </a>
               <div className="blog-card__body">
                 <span className="blog-card__category label">{category}</span>
