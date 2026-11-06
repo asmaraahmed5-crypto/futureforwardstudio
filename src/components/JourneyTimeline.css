@@ -2,30 +2,25 @@
 
 .jt-section {
   width: 100%;
-  height: 180vw;
-  position: relative;
-  /* overflow must NOT be set here — it would break position:sticky on .jt-sticky */
-}
-
-/* Sticky container fills the full viewport */
-.jt-sticky {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 52px 60px 0;
+  padding: clamp(80px, 10vw, 120px) var(--gutter);
   box-sizing: border-box;
 }
 
-/* ── Static header ── */
-.jt-head {
-  flex-shrink: 0;
+/* Inner wrapper — matches other sections' max-width */
+.jt-sticky {
+  max-width: 1160px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 64px;
+}
+
+/* ── Header ── */
+.jt-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   align-items: center;
   text-align: center;
 }
@@ -41,82 +36,71 @@
 
 .jt-h2 {
   font-family: var(--font-sans);
-  font-size: clamp(22px, 2.8vw, 46px);
+  font-size: clamp(28px, 3.5vw, 52px);
   font-weight: 700;
-  line-height: 0.96;
+  line-height: 1.0;
   margin: 0;
 }
 
 .jt-sub {
   font-family: var(--font-sans);
-  font-size: clamp(12px, 1vw, 15px);
-  line-height: 1.55;
-  max-width: 48ch;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
+  max-width: 52ch;
   margin: 0;
 }
 
-/* ── Scrolling track ── */
+/* ── Timeline track — 4-column grid ── */
 .jt-track {
-  flex: 0 0 200px;
+  width: 100%;
   position: relative;
-  overflow: hidden;
 }
 
-/* Center line — absolute, runs the full track width */
+/* Horizontal connector line */
 .jt-center-line {
   position: absolute;
-  bottom: 21px;
+  bottom: 5px;
   left: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  z-index: 2;
   pointer-events: none;
 }
 
 .jt-line-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .journey-line {
   height: 2px;
-  width: 0%;
+  width: 100%;
   border-radius: 9999px;
   flex: 1;
 }
 
-/* Slider — GSAP pans this left */
+/* Grid of 4 items */
 .jt-slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 200vw;
-  display: flex;
-  align-items: flex-end;          /* items sit above the bottom line */
-  padding: 0 60px 16px 50vw;     /* 50vw left push: first item starts off-screen right */
-  gap: 6vw;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  width: 100%;
+  padding-bottom: 32px;
 }
 
-/* ── Each item — auto height, anchored to bottom of track ── */
 .jt-item {
-  flex-shrink: 0;
-  width: 20vw;
   display: flex;
   flex-direction: column;
-  /* no height:100% — items are as tall as their content */
 }
 
-/* Text: number above body, tight gap */
 .jt-item-text {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding-bottom: 16px;
+  gap: 10px;
+  padding-bottom: 20px;
+  flex: 1;
 }
 
 .jt-item-num {
@@ -131,13 +115,12 @@
 .jt-item-body {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .jt-item-title {
   font-family: var(--font-sans);
-  font-size: clamp(15px, 1.75vw, 26px);
-  margin: 0;
+  font-size: clamp(18px, 1.6vw, 24px);
   font-weight: 700;
   line-height: 1.1;
   margin: 0;
@@ -145,16 +128,16 @@
 
 .jt-item-desc {
   font-family: var(--font-sans);
-  font-size: clamp(12px, 0.9vw, 13px);
-  line-height: 1.55;
+  font-size: clamp(13px, 0.95vw, 14px);
+  line-height: 1.6;
   margin: 0;
-  max-width: 22ch;
+  opacity: 0.65;
 }
 
-/* Stem: vertical line + dot anchoring to center line at the very bottom */
+/* Stem dot anchoring item to the connector line */
 .jt-stem {
   flex-shrink: 0;
-  height: 40px;
+  height: 24px;
   width: 2px;
   display: flex;
   flex-direction: column;
@@ -164,32 +147,31 @@
   width: 2px;
   flex: 1;
   border-radius: 2px;
+  opacity: 0.25;
 }
 
 .jt-stem-dot {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
-  margin-left: -4.5px;
+  margin-left: -4px;
 }
 
-/* ── Big statement block ── */
+/* ── Statement block ── */
 .jt-statement {
-  flex-shrink: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
   align-items: center;
   text-align: center;
 }
 
 .jt-stmt-line {
   font-family: var(--font-sans);
-  font-size: clamp(24px, 3.8vw, 64px);
+  font-size: clamp(28px, 4vw, 64px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.1;
   margin: 0;
   letter-spacing: -0.02em;
   text-align: center;
@@ -203,73 +185,32 @@
 .jt-cta {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 24px 40px;
 }
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .jt-section {
-    height: auto;
-    overflow: visible;
+    padding: clamp(60px, 8vw, 80px) var(--gutter);
   }
 
-  .jt-sticky {
-    position: relative;
-    height: auto;
-    overflow: visible;
-    padding: 56px 24px 0;
-  }
+  .jt-sticky { gap: 48px; }
+  .jt-h2     { font-size: 26px; }
+  .jt-sub    { font-size: 13px; }
 
-  .jt-head      { padding-bottom: 32px; }
-  .jt-h2        { font-size: 28px; }
-  .jt-sub       { font-size: 13px; }
-
-  /* Track: vertical list instead of horizontal scroll */
-  .jt-track {
-    overflow: visible;
-    flex: unset;
-    height: auto;
+  .jt-slider {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
   }
 
   .jt-center-line { display: none; }
+  .jt-stem        { display: none; }
 
-  .jt-slider {
-    position: relative;
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-    gap: 28px;
-    border-left: 2px solid rgba(255,255,255,0.15);
-    padding-left: 20px;
-    padding-bottom: 0;
-  }
+  .jt-item-title  { font-size: 18px; }
+  .jt-item-desc   { font-size: 13px; }
 
-  .jt-item {
-    width: 100%;
-    height: auto;
-  }
+  .jt-stmt-line { font-size: clamp(24px, 7vw, 36px); }
+}
 
-  .jt-item-text {
-    flex: unset;
-    overflow: visible;
-    justify-content: flex-start;
-    gap: 8px;
-    padding-bottom: 0;
-  }
-
-  .jt-item-num   { display: none; }
-  .jt-stem       { display: none; }
-
-  .jt-item-title { font-size: 20px; }
-  .jt-item-desc  { font-size: 13px; max-width: 100%; }
-
-  .jt-statement {
-    padding: 40px 0 36px;
-    gap: 0;
-  }
-
-  .jt-stmt-line { font-size: clamp(22px, 7vw, 36px); }
+@media (max-width: 480px) {
+  .jt-slider { grid-template-columns: 1fr; }
 }

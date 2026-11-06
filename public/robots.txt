@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://futureforwardstudio.lovewithoutrush.workers.dev/sitemap.xml
+Sitemap: https://futureforwardstudio.com/sitemap.xml

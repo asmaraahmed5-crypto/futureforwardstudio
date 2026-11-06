@@ -18,7 +18,7 @@
 
   /* Typography */
   --font-sans: 'Lexend', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-mono: var(--font-sans); /* mono font retired: everything uses Lexend */
 
   /* Type scale */
   --text-headline: clamp(48px, 6vw, 72px);
@@ -43,9 +43,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-body { min-height: 100svh; }
+body {
+  min-height: 100svh;
+  overflow-x: hidden;
+}
 
 #root {
   display: flex;

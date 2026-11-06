@@ -19,7 +19,7 @@ export function AICloud() {
         {/* ── Left: image ── */}
         <div className="ai-cloud__img-col">
           <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=1100&fit=crop&q=75&fm=webp"
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=700&h=1100&fit=crop&q=75&fm=webp"
             alt="AI marketing cloud dashboard"
             className="ai-cloud__img"
             loading="lazy"

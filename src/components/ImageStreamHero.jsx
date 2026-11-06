@@ -33,6 +33,28 @@ function keyframes(dir, name, p) {
   return `@keyframes ${name}{${steps.join('')}}`
 }
 
+function HeroImg({ src, alt, eager }) {
+  let srcSet, sizes
+  if (src.includes('images.unsplash.com')) {
+    const mobileSrc = src.replace(/([?&]w=)\d+/, '$1180').replace(/([?&]h=)\d+/, '$1252')
+    srcSet = `${mobileSrc} 180w, ${src} 260w`
+    sizes = '(max-width: 768px) 180px, 260px'
+  }
+  return (
+    <img
+      src={src}
+      srcSet={srcSet}
+      sizes={sizes}
+      alt={alt}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchpriority={eager ? 'high' : 'auto'}
+      decoding="async"
+      className="ish-img"
+      draggable={false}
+    />
+  )
+}
+
 export function ImageStreamHero({
   images,
   cards = 9,
@@ -96,15 +118,19 @@ export function ImageStreamHero({
                   }}
                 >
                   {img ? (
-                    <img
-                      src={img.src}
-                      alt={img.alt ?? ''}
-                      loading={i === 0 && name === right ? 'eager' : 'lazy'}
-                      fetchpriority={i === 0 && name === right ? 'high' : 'auto'}
-                      decoding="async"
-                      className="ish-img"
-                      draggable={false}
-                    />
+                    img.bg ? (
+                      <div
+                        className="ish-img"
+                        style={{ background: img.bg }}
+                        aria-hidden="true"
+                      />
+                    ) : (
+                      <HeroImg
+                        src={img.src}
+                        alt={img.alt ?? ''}
+                        eager={i === 0 && name === right}
+                      />
+                    )
                   ) : null}
                 </div>
               )

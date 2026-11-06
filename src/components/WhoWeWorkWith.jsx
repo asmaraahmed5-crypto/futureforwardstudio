@@ -117,7 +117,7 @@ export function WhoWeWorkWith() {
 
         {/* CTA */}
         <div className="section__cta-row">
-          <SpotButton href="#contact" className="spot-btn--dark">
+          <SpotButton href="#contact" className="spot-btn--primary">
             Talk to Future Forward Studio →
           </SpotButton>
         </div>

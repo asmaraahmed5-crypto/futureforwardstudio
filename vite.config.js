@@ -1,10 +1,35 @@
+import { resolve } from 'node:path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import seoPrerender from './seo-prerender.js'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    seoPrerender(),
+    {
+      // Dev only: serve service.html for /services/<slug> (the Worker does this in production)
+      name: 'service-route',
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          if (req.url && /^\/services\/[^/?]+\/?(\?.*)?$/.test(req.url)) req.url = '/service.html'
+          next()
+        })
+      },
+    },
+  ],
+  server: {
+    port: parseInt(process.env.PORT || '5174'),
+    strictPort: false,
+  },
   build: {
     rollupOptions: {
+      input: {
+        main: resolve(import.meta.dirname, 'index.html'),
+        contact: resolve(import.meta.dirname, 'contact.html'),
+        thankyou: resolve(import.meta.dirname, 'thank-you.html'),
+        service: resolve(import.meta.dirname, 'service.html'),
+      },
       output: {
         manualChunks(id) {
           if (id.includes('@paper-design/shaders-react')) return 'vendor-shaders'

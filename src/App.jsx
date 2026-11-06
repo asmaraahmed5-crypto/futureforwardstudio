@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react'
 import './App.css'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import { ContactPopupHost } from './components/ContactPopupHost'
 import { ImageStreamHero } from './components/ImageStreamHero'
 import { SpotButton } from './components/SpotButton'
 import { ShuffleCta } from './components/ShuffleCta'
@@ -10,37 +12,36 @@ import { AICloud } from './components/AICloud'
 import { ClientLogos } from './components/ClientLogos'
 import { CaseStudies } from './components/CaseStudies'
 import { Testimonials } from './components/Testimonials'
+import { Pricing } from './components/Pricing'
 import { LatestBlogs } from './components/LatestBlogs'
 import { FAQ } from './components/FAQ'
 import { Sparkles, ArrowRight } from 'lucide-react'
 
 const WhoWeWorkWith = lazy(() => import('./components/WhoWeWorkWith').then(m => ({ default: m.WhoWeWorkWith })))
 
-const CDN = 'https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev'
-
 const UNS = 'https://images.unsplash.com/photo'
 
 const HERO_IMAGES = [
-  { src: `${UNS}-1750365920056-d4b4ca73fbaa?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'AI marketing strategy' },
-  { src: `${CDN}/gradients/hero_gradient/hero-gradients-01.png`,                 alt: '' },
-  { src: `${UNS}-1677212004257-103cfa6b59d0?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'AI automation' },
-  { src: `${UNS}-1707762890671-52ef6d6f51e7?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'Marketing analytics dashboard' },
-  { src: `${CDN}/gradients/hue-flow/hue-flow-01.png`,                            alt: '' },
-  { src: `${UNS}-1542744174-a35e40ade835?w=400&h=560&fit=crop&q=75&fm=webp`,    alt: 'Marketing strategy planning' },
-  { src: `${UNS}-1759393852314-59dc00faeed3?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'Content creation' },
-  { src: `${CDN}/gradients/moon/moon-grade-03.png`,                               alt: '' },
-  { src: `${UNS}-1748439281934-2803c6a3ee36?w=400&h=560&fit=crop&q=75&fm=webp`, alt: 'Data analytics' },
+  { src: `${UNS}-1750365920056-d4b4ca73fbaa?w=260&h=365&fit=crop&q=55&fm=webp`, alt: 'AI marketing strategy' },
+  { bg: 'linear-gradient(155deg, #f59e0b 0%, #d97706 45%, #b45309 100%)' },
+  { src: `${UNS}-1677212004257-103cfa6b59d0?w=260&h=365&fit=crop&q=55&fm=webp`, alt: 'AI automation' },
+  { src: `${UNS}-1707762890671-52ef6d6f51e7?w=260&h=365&fit=crop&q=55&fm=webp`, alt: 'Marketing analytics dashboard' },
+  { bg: 'linear-gradient(155deg, #7c3aed 0%, #5b21b6 55%, #3b0764 100%)' },
+  { src: `${UNS}-1542744174-a35e40ade835?w=260&h=365&fit=crop&q=55&fm=webp`,    alt: 'Marketing strategy planning' },
+  { src: `${UNS}-1759393852314-59dc00faeed3?w=260&h=365&fit=crop&q=55&fm=webp`, alt: 'Content creation' },
+  { bg: 'linear-gradient(155deg, #0f172a 0%, #1e3a5f 50%, #0c4a6e 100%)' },
+  { src: `${UNS}-1748439281934-2803c6a3ee36?w=260&h=365&fit=crop&q=55&fm=webp`, alt: 'Data analytics' },
 ]
 
 const SERVICES = [
-  { num: '01', title: 'AI Marketing Strategy',  desc: 'We find the opportunities, build the roadmap, and show you exactly where AI fits in your marketing.' },
-  { num: '02', title: 'AI Content Marketing',   desc: 'More content, at speed, that still sounds like you — not a robot. Blogs, social, email, campaigns.' },
-  { num: '03', title: 'AI-Powered SEO',         desc: 'Combine AI-powered research with proven strategy to build content authority and get your business found.' },
-  { num: '04', title: 'AI Advertising',         desc: 'AI-powered insights for smarter ad spend — better audiences, messaging, creative, and performance.' },
-  { num: '05', title: 'Marketing Automation',   desc: 'Build smarter workflows that automate lead nurturing, follow-ups, and repetitive marketing tasks.' },
-  { num: '06', title: 'Customer Intelligence',  desc: 'Turn the clues your customers leave everywhere into insights you can actually use.' },
-  { num: '07', title: 'Marketing Analytics',    desc: 'No more drowning in dashboards. Simple answers: what\'s working, what\'s not, what to do next.' },
-  { num: '08', title: 'Growth Marketing',       desc: 'Connect the dots across your marketing ecosystem and keep moving your business forward.' },
+  { num: '01', slug: 'ai-marketing-strategy', title: 'AI Marketing Strategy',  desc: 'We find the opportunities, build the roadmap, and show you exactly where AI fits in your marketing.' },
+  { num: '02', slug: 'ai-content-marketing', title: 'AI Content Marketing',   desc: 'More content, at speed, that still sounds like you — not a robot. Blogs, social, email, campaigns.' },
+  { num: '03', slug: 'ai-powered-seo', title: 'AI-Powered SEO',         desc: 'Combine AI-powered research with proven strategy to build content authority and get your business found.' },
+  { num: '04', slug: 'ai-advertising', title: 'AI Advertising',         desc: 'AI-powered insights for smarter ad spend — better audiences, messaging, creative, and performance.' },
+  { num: '05', slug: 'marketing-automation', title: 'Marketing Automation',   desc: 'Build smarter workflows that automate lead nurturing, follow-ups, and repetitive marketing tasks.' },
+  { num: '06', slug: 'ai-website-design', title: 'AI Website Design',      desc: 'Fast, conversion-focused websites designed and built with AI — sharp, on-brand, and made to turn visitors into customers.' },
+  { num: '07', slug: 'ai-presentation-design', title: 'AI Presentation Design', desc: 'Pitch decks and presentations that look professionally designed, tell your story clearly, and get built in a fraction of the time.' },
+  { num: '08', slug: 'growth-marketing', title: 'Growth Marketing',       desc: 'Connect the dots across your marketing ecosystem and keep moving your business forward.' },
 ]
 
 const CLOUD_FEATURES = [
@@ -134,10 +135,10 @@ function App() {
             <div className="spotlight__visual">
               <div className="spotlight__glow" />
               <img
-                src="https://images.unsplash.com/photo-1617751218806-9077a9093d8b?w=500&h=875&fit=crop&q=75&fm=webp"
+                src="https://images.unsplash.com/photo-1617751218806-9077a9093d8b?w=400&h=700&fit=crop&q=50&fm=webp"
                 alt="Abstract neon light waves"
                 className="spotlight__img"
-                width="500" height="875"
+                width="400" height="700"
                 loading="lazy"
               />
             </div>
@@ -151,7 +152,7 @@ function App() {
             <div className="rc-visual">
               <div className="rc-visual__glow" />
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=534&h=680&fit=crop&q=75&fm=webp"
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=534&h=680&fit=crop&q=75&fm=webp"
                 alt="Marketing analytics dashboard"
                 className="rc-img"
                 width="534" height="680"
@@ -188,7 +189,7 @@ function App() {
           <div className="hw-inner">
             <div className="hw-header">
               <span className="label section-eyebrow">03 — How We Work</span>
-              <h2>ai does the heavy lifting.<br />we make sure it doesn't<br />lift the wrong thing.</h2>
+              <h2>ai does the heavy lifting. we make sure it doesn't lift the wrong thing.</h2>
               <p className="hw-header__desc">We combine AI's analytical power with human strategy to make every marketing decision smarter, faster, and more effective.</p>
               <SpotButton href="#contact" className="spot-btn--dark">
                 Supercharge My Marketing <ArrowRight size={15} />
@@ -201,26 +202,26 @@ function App() {
                   role: 'AI brings',
                   title: 'the horsepower.',
                   desc: 'Analyse data, identify patterns, accelerate content, automate tasks, and optimise campaigns at scale.',
-                  img: 'https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&h=450&fit=crop&q=75&fm=webp',
+                  img: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=500&h=281&fit=crop&q=55&fm=webp',
                   alt: 'AI data processing',
                 },
                 {
                   role: 'We bring',
                   title: 'the steering wheel.',
                   desc: 'We decide what matters, where to focus, and how everything connects back to your business goals.',
-                  img: 'https://images.unsplash.com/photo-1542744174-a35e40ade835?w=800&h=450&fit=crop&q=75&fm=webp',
+                  img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=281&fit=crop&q=55&fm=webp',
                   alt: 'Marketing strategy planning',
                 },
                 {
                   role: 'You get',
                   title: 'the destination.',
                   desc: 'Efficient marketing. Better customer journeys. Smarter campaigns. A clearer path to growth.',
-                  img: 'https://images.unsplash.com/photo-1707762890671-52ef6d6f51e7?w=800&h=450&fit=crop&q=75&fm=webp',
+                  img: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&h=281&fit=crop&q=55&fm=webp',
                   alt: 'Business growth results',
                 },
               ].map((card) => (
                 <div key={card.role} className="hw-card">
-                  <img src={card.img} alt={card.alt} className="hw-card__img" width="800" height="450" loading="lazy" />
+                  <img src={card.img} alt={card.alt} className="hw-card__img" width="500" height="281" loading="lazy" />
                   <div className="hw-card__body">
                     <span className="label hw-card__role">{card.role}</span>
                     <h3 className="hw-card__title">{card.title}</h3>
@@ -242,7 +243,7 @@ function App() {
         <section className="section section--dark" id="services">
           <div className="section__inner section__inner--centered">
             <span className="label section-eyebrow">04 — What We Do</span>
-            <h2>what can future forward<br />studio do for you?</h2>
+            <h2>what can future forward studio do for you?</h2>
             <p className="section__sub">Quite a bit.</p>
           </div>
           <SkewCards services={SERVICES} />
@@ -270,7 +271,7 @@ function App() {
           <div className="section__inner section__inner--centered">
             <span className="label section-eyebrow">Our Philosophy</span>
             <blockquote className="philosophy-quote">
-              "We don't do AI just to<br />put 'AI' on the website."
+              "We don't do AI just to put 'AI' on the website."
             </blockquote>
             <p className="philosophy-sub">AI is everywhere. Everyone's using it. But we're only interested in one question: does it actually help your business?</p>
             <div className="philosophy-pillars">
@@ -283,6 +284,9 @@ function App() {
 
         {/* ── Testimonials (light) ── */}
         <Testimonials />
+
+        {/* ── Pricing (dark) ── */}
+        <Pricing />
 
         {/* ── Latest Blogs (light) ── */}
         <LatestBlogs />
@@ -297,92 +301,16 @@ function App() {
             <h2 className="h2--dark">that's kind of our thing.</h2>
             <p className="section__sub section__sub--dark">You already have the business. You already have the ambition. Now let's make your marketing work a little harder for you.</p>
             <div className="cta-buttons">
-              <SpotButton href="mailto:hello@futureforwardstudio.com" className="spot-btn--dark">Get My Free AI Marketing Strategy →</SpotButton>
-              <SpotButton href="mailto:hello@futureforwardstudio.com" className="spot-btn--outline-dark">Talk to an AI Marketing Expert →</SpotButton>
+              <SpotButton href="mailto:hello@futureforwardstudio.com" data-contact-popup className="spot-btn--dark">Get My Free AI Marketing Strategy →</SpotButton>
+              <SpotButton href="mailto:hello@futureforwardstudio.com" data-contact-popup className="spot-btn--outline-dark">Talk to an AI Marketing Expert →</SpotButton>
             </div>
             <p className="cta-tagline cta-tagline--dark">Your future customers are out there. Let's help them find you.</p>
           </div>
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <img src="/logo-horizontal.png" alt="Future Forward Studio" className="footer-logo" width="300" height="100" />
-            <p className="footer-desc">
-              AI-powered marketing agency helping ambitious businesses turn artificial intelligence into better marketing, smarter decisions, and real growth.
-            </p>
-            <div className="footer-social">
-              <a href="#" className="social-link" aria-label="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </a>
-              <a href="#" className="social-link" aria-label="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              </a>
-              <a href="#" className="social-link" aria-label="X / Twitter">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.258 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <div className="footer-links">
-            <div className="footer-col">
-              <span className="footer-col__heading label">Services</span>
-              <ul>
-                <li><a href="#services">AI Marketing Strategy</a></li>
-                <li><a href="#services">AI Content Marketing</a></li>
-                <li><a href="#services">AI-Powered SEO</a></li>
-                <li><a href="#services">AI Advertising</a></li>
-                <li><a href="#services">Marketing Automation</a></li>
-                <li><a href="#services">Customer Intelligence</a></li>
-                <li><a href="#services">Marketing Analytics</a></li>
-                <li><a href="#services">Growth Marketing</a></li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <span className="footer-col__heading label">Company</span>
-              <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#cloud">AI Marketing Cloud</a></li>
-                <li><a href="#contact">Case Studies</a></li>
-                <li><a href="#contact">Blog</a></li>
-                <li><a href="#contact">Careers</a></li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <span className="footer-col__heading label">Get in Touch</span>
-              <ul className="footer-contact">
-                <li>
-                  <span className="label">Email</span>
-                  <a href="mailto:hello@futureforwardstudio.com">hello@futureforwardstudio.com</a>
-                </li>
-                <li>
-                  <span className="label">Availability</span>
-                  <span className="footer-status">
-                    <span className="status-dot" />
-                    Open for new projects
-                  </span>
-                </li>
-                <li>
-                  <span className="label">Based</span>
-                  <span>Worldwide · Remote-First</span>
-                </li>
-              </ul>
-              <SpotButton href="#contact" className="spot-btn--primary spot-btn--sm footer-cta">Start a Project →</SpotButton>
-            </div>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Future Forward Studio. All rights reserved.</span>
-          <span className="footer-bottom__tagline">AI-powered marketing. Human-powered ideas. Forward-thinking growth.</span>
-          <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
+      <ContactPopupHost />
     </>
   )
 }

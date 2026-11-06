@@ -15,7 +15,7 @@ const GRADIENTS = [
 export function SkewCards({ services }) {
   return (
     <div className="skew-cards">
-      {services.map(({ num, title, desc }, i) => {
+      {services.map(({ num, slug, title, desc }, i) => {
         const [from, to] = GRADIENTS[i % GRADIENTS.length]
         const grad = `linear-gradient(315deg, ${from}, ${to})`
         return (
@@ -32,7 +32,7 @@ export function SkewCards({ services }) {
               <span className="skew-card__num">{num}</span>
               <h3 className="skew-card__title">{title.toLowerCase()}</h3>
               <p className="skew-card__desc">{desc}</p>
-              <SpotButton href="#contact" className="spot-btn--primary skew-card__btn">
+              <SpotButton href={`/services/${slug}`} className="spot-btn--primary skew-card__btn">
                 Learn More →
               </SpotButton>
             </div>

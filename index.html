@@ -2,20 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QYCNRCF4B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7QYCNRCF4B');
+    </script>
     <link rel="icon" type="image/png" href="/logo-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="AI-powered web design, branding, and digital growth for modern businesses." />
+    <link rel="canonical" href="https://futureforwardstudio.com/" />
     <title>Future Forward Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="preconnect" href="https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <!-- Preload first hero image (LCP candidate) -->
-    <link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1750365920056-d4b4ca73fbaa?w=400&h=560&fit=crop&q=75&fm=webp" />
+    <link rel="preload" as="image" fetchpriority="high"
+      href="https://images.unsplash.com/photo-1750365920056-d4b4ca73fbaa?w=260&h=365&fit=crop&q=55&fm=webp"
+      imagesrcset="https://images.unsplash.com/photo-1750365920056-d4b4ca73fbaa?w=180&h=252&fit=crop&q=55&fm=webp 180w, https://images.unsplash.com/photo-1750365920056-d4b4ca73fbaa?w=260&h=365&fit=crop&q=55&fm=webp 260w"
+      imagesizes="(max-width: 768px) 180px, 260px"
+    />
     <!-- Non-render-blocking font load -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" /></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>
