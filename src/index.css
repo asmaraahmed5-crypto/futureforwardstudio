@@ -1,3 +1,13 @@
+/* Metric-matched fallback so the Lexend web-font swap does not shift layout (CLS). */
+@font-face {
+  font-family: 'Lexend Fallback';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 112%;
+  ascent-override: 89%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 /* ── Future Forward Studio — Design Tokens ── */
 :root {
   /* Colours */
@@ -17,7 +27,7 @@
   --rule:     var(--steel);
 
   /* Typography */
-  --font-sans: 'Lexend', system-ui, sans-serif;
+  --font-sans: 'Lexend', 'Lexend Fallback', system-ui, sans-serif;
   --font-mono: var(--font-sans); /* mono font retired: everything uses Lexend */
 
   /* Type scale */
