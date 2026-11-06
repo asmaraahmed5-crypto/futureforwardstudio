@@ -32,7 +32,7 @@ export function SkewCards({ services }) {
               <span className="skew-card__num">{num}</span>
               <h3 className="skew-card__title">{title.toLowerCase()}</h3>
               <p className="skew-card__desc">{desc}</p>
-              <SpotButton href={`/services/${slug}`} className="spot-btn--primary skew-card__btn">
+              <SpotButton href={`/services/${slug}`} className="spot-btn--primary skew-card__btn" aria-label={`Learn more about ${title}`}>
                 Learn More →
               </SpotButton>
             </div>

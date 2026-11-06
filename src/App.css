@@ -813,3 +813,13 @@
   .footer-links  { grid-template-columns: 1fr 1fr; }
   .philosophy-quote { font-size: clamp(24px, 7vw, 36px); }
 }
+
+/* Touch targets: give small links/buttons at least a 24px hit area (Lighthouse target-size) */
+.footer-col ul a,
+.cs-card__link,
+.pricing-note__link,
+.blog-card__read,
+.faq__link { display: inline-block; min-height: 24px; padding-block: 3px; }
+.footer-col ul { gap: 4px; }
+.ts-dot { position: relative; }
+.ts-dot::after { content: ''; position: absolute; inset: -9px -5px; }

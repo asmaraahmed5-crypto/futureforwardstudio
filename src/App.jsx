@@ -7,15 +7,19 @@ import { ImageStreamHero } from './components/ImageStreamHero'
 import { SpotButton } from './components/SpotButton'
 import { ShuffleCta } from './components/ShuffleCta'
 import { SkewCards } from './components/SkewCards'
-import { JourneyTimeline } from './components/JourneyTimeline'
-import { AICloud } from './components/AICloud'
 import { ClientLogos } from './components/ClientLogos'
-import { CaseStudies } from './components/CaseStudies'
-import { Testimonials } from './components/Testimonials'
-import { Pricing } from './components/Pricing'
-import { LatestBlogs } from './components/LatestBlogs'
-import { FAQ } from './components/FAQ'
 import { Sparkles, ArrowRight } from 'lucide-react'
+
+const AICloud = lazy(() => import('./components/AICloud').then(m => ({ default: m.AICloud })))
+const CaseStudies = lazy(() => import('./components/CaseStudies').then(m => ({ default: m.CaseStudies })))
+const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })))
+const Pricing = lazy(() => import('./components/Pricing').then(m => ({ default: m.Pricing })))
+const LatestBlogs = lazy(() => import('./components/LatestBlogs').then(m => ({ default: m.LatestBlogs })))
+const FAQ = lazy(() => import('./components/FAQ').then(m => ({ default: m.FAQ })))
+const JourneyTimeline = lazy(() => import('./components/JourneyTimeline').then(m => ({ default: m.JourneyTimeline })))
+
+// Below-the-fold sections load as separate chunks so the first paint ships less JavaScript.
+const Defer = ({ children, h = 600 }) => <Suspense fallback={<div style={{ minHeight: h }} aria-hidden="true" />}>{children}</Suspense>
 
 const WhoWeWorkWith = lazy(() => import('./components/WhoWeWorkWith').then(m => ({ default: m.WhoWeWorkWith })))
 
@@ -253,13 +257,13 @@ function App() {
         </section>
 
         {/* ── 05 Case Studies (light) ── */}
-        <CaseStudies />
+        <Defer><CaseStudies /></Defer>
 
         {/* ── 06 AI Cloud (light) ── */}
-        <AICloud />
+        <Defer><AICloud /></Defer>
 
         {/* ── 06 Journey (dark) ── */}
-        <JourneyTimeline />
+        <Defer><JourneyTimeline /></Defer>
 
         {/* ── 07 Who It's For (dark — shader cards) ── */}
         <Suspense fallback={null}>
@@ -283,16 +287,16 @@ function App() {
         </section>
 
         {/* ── Testimonials (light) ── */}
-        <Testimonials />
+        <Defer><Testimonials /></Defer>
 
         {/* ── Pricing (dark) ── */}
-        <Pricing />
+        <Defer><Pricing /></Defer>
 
         {/* ── Latest Blogs (light) ── */}
-        <LatestBlogs />
+        <Defer><LatestBlogs /></Defer>
 
         {/* ── FAQs (dark) ── */}
-        <FAQ />
+        <Defer><FAQ /></Defer>
 
         {/* ── Final CTA (light) ── */}
         <section className="section section--light section--cta" id="contact">
