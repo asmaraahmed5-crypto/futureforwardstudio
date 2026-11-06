@@ -1,6 +1,14 @@
 // Redirects www.futureforwardstudio.com to the main domain, and serves the static site for everything else.
-export default {
-  async fetch(request, env) {
+// Security headers added to every response. No CSP on purpose: the site relies on inline scripts (GA) and third-party fonts/images.
+const SECURITY_HEADERS = {
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+}
+
+async function handle(request, env) {
     const url = new URL(request.url)
     if (url.hostname === 'www.futureforwardstudio.com') {
       url.hostname = 'futureforwardstudio.com'
@@ -21,5 +29,13 @@ export default {
       return Response.redirect(new URL('/#services', url).toString(), 301)
     }
     return env.ASSETS.fetch(request)
+}
+
+export default {
+  async fetch(request, env) {
+    const res = await handle(request, env)
+    const out = new Response(res.body, res)
+    for (const [k, v] of Object.entries(SECURITY_HEADERS)) out.headers.set(k, v)
+    return out
   },
 }

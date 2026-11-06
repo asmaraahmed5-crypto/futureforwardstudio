@@ -8,7 +8,7 @@ import { FAQS } from './src/faqData.js'
 const SITE = 'https://futureforwardstudio.com'
 const NAME = 'Future Forward Studio'
 const OG_IMAGE = `${SITE}/logo-primary.png`
-const HOME_TITLE = 'AI Marketing Agency: Strategy, SEO, Content & Ads | Future Forward Studio'
+const HOME_TITLE = 'AI Marketing Agency: SEO, Content & Ads | Future Forward Studio'
 const HOME_DESC = 'Future Forward Studio is an AI marketing agency. We combine AI with real strategy for SEO, content, ads, automation and website design that grows your business.'
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -21,11 +21,52 @@ const faqLd = (faqs) => ({
   mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 })
 
+const svcId = (s) => `${SITE}/services/${s.slug}#service`
+
+const PLANS = [
+  { name: 'Launch', price: 2500, desc: 'For startups and small businesses ready to bring AI into their marketing.' },
+  { name: 'Growth', price: 5000, desc: 'For growing businesses that want AI working across every marketing channel.' },
+]
+
 const orgLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'Organization', '@id': `${SITE}/#org`, name: NAME, url: SITE, logo: `${SITE}/logo-primary.png`, description: HOME_DESC },
-    { '@type': 'WebSite', '@id': `${SITE}/#website`, url: SITE, name: NAME, publisher: { '@id': `${SITE}/#org` } },
+    {
+      '@type': ['Organization', 'ProfessionalService'],
+      '@id': `${SITE}/#org`,
+      name: NAME,
+      url: SITE,
+      logo: { '@type': 'ImageObject', '@id': `${SITE}/#logo`, url: `${SITE}/logo-primary.png`, contentUrl: `${SITE}/logo-primary.png` },
+      image: `${SITE}/logo-primary.png`,
+      description: HOME_DESC,
+      email: 'hello@futureforwardstudio.com',
+      contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'hello@futureforwardstudio.com', availableLanguage: 'English', url: `${SITE}/contact` },
+      knowsAbout: ['AI marketing', 'AI-powered SEO', 'Content marketing', 'AI advertising', 'Marketing automation', 'Website design', 'Growth marketing'],
+      makesOffer: SERVICES.map((s) => ({ '@id': svcId(s) })),
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Monthly retainer plans',
+        itemListElement: PLANS.map((p) => ({
+          '@type': 'Offer',
+          name: `${p.name} plan`,
+          description: p.desc,
+          priceSpecification: { '@type': 'UnitPriceSpecification', price: p.price, priceCurrency: 'USD', unitText: 'MONTH' },
+          itemOffered: { '@type': 'Service', name: `${p.name}: AI marketing retainer`, provider: { '@id': `${SITE}/#org` } },
+        })),
+      },
+    },
+    { '@type': 'WebSite', '@id': `${SITE}/#website`, url: SITE, name: NAME, inLanguage: 'en', publisher: { '@id': `${SITE}/#org` } },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE}/#webpage`,
+      url: SITE + '/',
+      name: HOME_TITLE,
+      description: HOME_DESC,
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE}/#website` },
+      about: { '@id': `${SITE}/#org` },
+      primaryImageOfPage: { '@id': `${SITE}/#logo` },
+    },
   ],
 }
 
@@ -74,19 +115,44 @@ function serviceHtml(template, s) {
   const jsonld = [
     {
       '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: s.title,
-      description: desc,
-      url,
-      provider: { '@type': 'Organization', '@id': `${SITE}/#org`, name: NAME, url: SITE },
-      areaServed: 'Worldwide',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-        { '@type': 'ListItem', position: 2, name: s.title, item: url },
+      '@graph': [
+        {
+          '@type': 'Service',
+          '@id': svcId(s),
+          name: s.title,
+          serviceType: s.title,
+          description: desc,
+          url,
+          mainEntityOfPage: { '@id': `${url}#webpage` },
+          provider: { '@id': `${SITE}/#org` },
+          areaServed: 'Worldwide',
+          audience: { '@type': 'BusinessAudience', audienceType: s.forWho.join('; ') },
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: `${s.title}: what is included`,
+            itemListElement: s.included.map((i) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: i.title, description: i.desc } })),
+          },
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${url}#webpage`,
+          url,
+          name: title,
+          description: desc,
+          inLanguage: 'en',
+          isPartOf: { '@id': `${SITE}/#website` },
+          about: { '@id': svcId(s) },
+          breadcrumb: { '@id': `${url}#breadcrumb` },
+          primaryImageOfPage: { '@id': `${SITE}/#logo` },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': `${url}#breadcrumb`,
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+            { '@type': 'ListItem', position: 2, name: s.title, item: url },
+          ],
+        },
       ],
     },
     ...(s.faqs ? [faqLd(s.faqs)] : []),
