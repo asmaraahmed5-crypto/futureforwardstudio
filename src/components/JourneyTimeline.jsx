@@ -11,25 +11,25 @@ const TOP_ITEMS = [
   {
     id: 'noticed',
     num: '01',
-    label: 'get noticed.',
+    label: 'Get noticed.',
     content: 'AI positions you where your audience already scrolls — before they know they need you.',
   },
   {
     id: 'remembered',
     num: '02',
-    label: 'get remembered.',
+    label: 'Get remembered.',
     content: "Smart content builds recognition so your name sticks long before they're ready to buy.",
   },
   {
     id: 'trusted',
     num: '03',
-    label: 'get trusted.',
+    label: 'Get trusted.',
     content: 'Consistent, data-backed presence turns casual awareness into real authority.',
   },
   {
     id: 'chosen',
     num: '04',
-    label: 'get chosen.',
+    label: 'Get chosen.',
     content: "When they're ready to act, your name is the only one they think of.",
   },
 ]
@@ -98,7 +98,7 @@ export function JourneyTimeline() {
         <div className="jt-head">
           <p className="jt-eyebrow" style={{ color: MUTED }}>07 — The Journey</p>
           <h2 ref={titleRef} className="jt-h2" style={{ color: TEXT }}>
-            from "who are they?"<br />to "take my money."
+            From "who are they?"<br />to "take my money."
           </h2>
           <p className="jt-sub" style={{ color: MUTED }}>
             Great marketing isn't just about attention. It's about knowing what to do with it.

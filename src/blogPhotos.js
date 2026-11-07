@@ -1,0 +1,25 @@
+// Featured photos for the blog (Unsplash, free to use under the Unsplash License: https://unsplash.com/license).
+// id = the Unsplash photo id. scripts/blog-photos.mjs downloads each one, cropped to 1200x630, into public/img/blog/<slug>.jpg.
+export const PHOTOS = {
+  'ai-marketing-agency-pricing':          { id: '1762427354397-854a52e0ded7', alt: 'Calculator, pencil and colourful charts on a desk' },
+  'what-is-ai-marketing':                 { id: '1758691736836-0413b066787a', alt: 'A marketing team brainstorming with sticky notes on a glass wall' },
+  'how-to-choose-ai-marketing-agency':    { id: '1672380135241-c024f7fbfa13', alt: 'Two business people shaking hands in front of a laptop' },
+  'ai-seo-vs-traditional-seo':            { id: '1586125674857-4eb86880905d', alt: 'A computer screen showing the Google search page' },
+  'generative-engine-optimization-guide': { id: '1762328862557-e0a36587cd3c', alt: 'A smartphone showing an AI assistant ready to answer questions' },
+  'ai-marketing-strategy-template':       { id: '1676287565869-6992e7df9bb4', alt: 'A notebook with the words marketing strategy written by hand' },
+  'ai-content-marketing-strategy':        { id: '1499914485622-a88fac536970', alt: 'Hands typing on a laptop at a wooden desk' },
+  'ai-improves-google-ads':               { id: '1516251193007-45ef944ab0c6', alt: 'A hand holding a smartphone in front of city billboards' },
+  'marketing-automation-workflows':       { id: '1743385779347-1549dabf1320', alt: 'A hand-drawn workflow diagram on paper' },
+  'ai-seo-pricing':                       { id: '1551288049-bebda4e38f71', alt: 'A tablet showing website performance analytics charts' },
+  'aeo-vs-seo':                           { id: '1519558260268-cde7e03a0152', alt: 'A smart speaker beside a smartphone' },
+  'ai-marketing-examples':                { id: '1603201667230-bd139210db18', alt: 'Four colleagues collaborating around a laptop' },
+  'how-to-use-ai-in-marketing':           { id: '1508780709619-79562169bc64', alt: 'Hands typing on a laptop keyboard' },
+  'how-to-rank-in-chatgpt':               { id: '1746286721888-409b7ca336b4', alt: 'A person holding a phone showing recommendations from an AI chatbot' },
+  'get-cited-in-ai-overviews':            { id: '1516382799247-87df95d790b7', alt: 'A magnifying glass held over a laptop keyboard' },
+  'small-business-marketing-automation':  { id: '1753164597612-5e71b83fda91', alt: 'A small business owner on the phone at her laptop in a design studio' },
+  'ai-vs-traditional-marketing-agency':   { id: '1681949103006-70066fb25dfe', alt: 'An agency team discussing ideas around a whiteboard' },
+  'optimize-content-for-ai-search':       { id: '1754548930574-6a995e5eb5a7', alt: 'A hand ticking items off a checklist on a tablet' },
+  'what-is-aeo':                          { id: '1606595898127-a06c52b4e2b3', alt: 'A glowing red neon question mark on a dark wall' },
+  'google-ads-cost-2026':                 { id: '1633158829585-23ba8f7c8caf', alt: 'A person stacking coins on a table' },
+  'best-ai-seo-tools':                    { id: '1625296276703-3fbc924f07b5', alt: 'A search performance dashboard showing clicks and impressions' },
+}

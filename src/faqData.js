@@ -5,6 +5,10 @@ export const FAQS = [
     a: "We use artificial intelligence — combined with real strategy — to make your marketing more effective. That means using AI to analyse your audience, create better content faster, run smarter ads, automate repetitive tasks, and surface the insights that actually move your business forward. We're not just using AI as a buzzword. We use it where it genuinely works.",
   },
   {
+    q: 'How much does an AI marketing agency cost?',
+    a: "Our plans are published: Launch is $2,500 per month and Growth is $5,000 per month, with custom Enterprise pricing. Ad spend is paid directly to the ad platforms and is separate from our fee. We also offer a free AI marketing audit so you can see where the quick wins are before you commit.",
+  },
+  {
     q: 'Do I need a big budget to work with Future Forward Studio?',
     a: "Not necessarily. AI often makes marketing more efficient, not more expensive. We work with businesses at different stages — from startups building their first marketing engine to established companies modernising what they already have. We'll talk through your goals first and recommend an approach that fits where you are right now.",
   },

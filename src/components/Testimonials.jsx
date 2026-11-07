@@ -120,7 +120,7 @@ export function Testimonials() {
     <section className="section section--light testimonials" id="testimonials">
       <div className="section__inner section__inner--centered">
         <span className="label section-eyebrow">Client Results</span>
-        <h2>don't take our word for it.</h2>
+        <h2>Don't take our word for it.</h2>
       </div>
 
       <div className="ts-wrap section__inner">

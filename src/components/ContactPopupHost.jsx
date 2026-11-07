@@ -5,6 +5,7 @@ import { ContactPopup } from './ContactPopup'
    [data-contact-popup]). The links keep their real href, so they still work without JS. */
 export function ContactPopupHost() {
   const [open, setOpen] = useState(false)
+  const [intent, setIntent] = useState('')
 
   useEffect(() => {
     const onClick = (e) => {
@@ -15,11 +16,12 @@ export function ContactPopupHost() {
       const isContact = href === '#contact' || href === '/contact' || a.hasAttribute('data-contact-popup')
       if (!isContact || a.hasAttribute('data-contact-page') || a.closest('.site-footer li')) return
       e.preventDefault()
+      setIntent(a.hasAttribute('data-audit') ? 'audit' : '')
       setOpen(true)
     }
     document.addEventListener('click', onClick)
     return () => document.removeEventListener('click', onClick)
   }, [])
 
-  return <ContactPopup open={open} onClose={() => setOpen(false)} />
+  return <ContactPopup open={open} onClose={() => setOpen(false)} intent={intent} />
 }

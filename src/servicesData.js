@@ -1,4 +1,6 @@
 // Content for every service page (/services/<slug>). The first 8 entries mirror the SERVICES list on the homepage.
+import { EXTRAS } from './serviceExtras.js'
+
 export const SERVICE_GRADIENTS = [
   ['#5b21b6', '#a855f7'],
   ['#1e40af', '#06b6d4'],
@@ -16,7 +18,7 @@ export const SERVICES = [
     num: '01',
     title: 'AI Marketing Strategy',
     short: 'We find the opportunities, build the roadmap, and show you exactly where AI fits in your marketing.',
-    headline: 'know exactly where ai fits in your marketing.',
+    headline: 'Know exactly where AI fits in your marketing.',
     lead: 'A clear, practical roadmap built around your goals, your customers and your team, not a pile of buzzwords.',
     overview: [
       'Most businesses know AI matters. Fewer know where to start. We audit your marketing, find the places where AI saves time or makes money, and turn them into a plan you can actually follow.',
@@ -49,7 +51,7 @@ export const SERVICES = [
     num: '02',
     title: 'AI Content Marketing',
     short: 'More content, at speed, that still sounds like you, not a robot. Blogs, social, email, campaigns.',
-    headline: 'more content. still sounds like you.',
+    headline: 'More content. Still sounds like you.',
     lead: 'We use AI to produce at speed and people to keep it sharp, so your brand voice never turns generic.',
     overview: [
       'Good content builds trust, but it takes time most teams do not have. We combine AI drafting with human editing to give you a steady flow of content that is on-brand, accurate and worth reading.',
@@ -82,7 +84,7 @@ export const SERVICES = [
     num: '03',
     title: 'AI-Powered SEO',
     short: 'Combine AI-powered research with proven strategy to build content authority and get your business found.',
-    headline: 'get found by the people already searching.',
+    headline: 'Get found by the people already searching.',
     lead: 'AI-powered research and proven SEO strategy, working together to bring the right visitors to your site.',
     overview: [
       'Search keeps changing, and now AI answers are changing it again. We use AI to research faster and spot opportunities, then pair it with proven SEO practice to build real authority.',
@@ -115,7 +117,7 @@ export const SERVICES = [
     num: '04',
     title: 'AI Advertising',
     short: 'AI-powered insights for smarter ad spend: better audiences, messaging, creative, and performance.',
-    headline: 'spend smarter. waste less on ads.',
+    headline: 'Spend smarter. Waste less on ads.',
     lead: 'AI-powered insight into audiences, messaging and creative, so every pound or dollar works harder.',
     overview: [
       'Ad costs keep rising, so guessing is expensive. We use AI to test more ideas, read the data faster and put your budget behind what is actually working.',
@@ -148,7 +150,7 @@ export const SERVICES = [
     num: '05',
     title: 'Marketing Automation',
     short: 'Build smarter workflows that automate lead nurturing, follow-ups, and repetitive marketing tasks.',
-    headline: 'let the busywork run itself.',
+    headline: 'Let the busywork run itself.',
     lead: 'Smart workflows that follow up, nurture and report automatically, so your team can focus on real conversations.',
     overview: [
       'Leads go cold when follow-up is slow, and teams burn hours on tasks a workflow could do. We map how your leads move, then automate the repetitive parts without making things feel robotic.',
@@ -181,7 +183,7 @@ export const SERVICES = [
     num: '06',
     title: 'AI Website Design',
     short: 'Fast, conversion-focused websites designed and built with AI: sharp, on-brand, and made to turn visitors into customers.',
-    headline: 'a website that looks sharp and sells.',
+    headline: 'A website that looks sharp and sells.',
     lead: 'Designed and built with AI for speed, shaped by real designers for quality, and made to turn visitors into customers.',
     overview: [
       'Your website is often the first thing a customer judges you on. We use AI to move quickly through layouts, copy and builds, then our designers refine every detail so it feels like your brand.',
@@ -214,7 +216,7 @@ export const SERVICES = [
     num: '07',
     title: 'AI Presentation Design',
     short: 'Pitch decks and presentations that look professionally designed, tell your story clearly, and get built in a fraction of the time.',
-    headline: 'decks that tell your story and win the room.',
+    headline: 'Decks that tell your story and win the room.',
     lead: 'Pitch decks and presentations that look professionally designed, read clearly and are built in a fraction of the time.',
     overview: [
       'A great deck is clear, memorable and easy to follow. We help you shape the story, then design every slide so it looks polished and works in the room, or on a screen.',
@@ -247,7 +249,7 @@ export const SERVICES = [
     num: '08',
     title: 'Growth Marketing',
     short: 'Connect the dots across your marketing ecosystem and keep moving your business forward.',
-    headline: 'connect the dots. keep growing.',
+    headline: 'Connect the dots. Keep growing.',
     lead: 'One joined-up approach across channels, data and experiments, so your marketing compounds instead of sitting in silos.',
     overview: [
       'Growth rarely comes from one channel. It comes from the whole system working together: attracting, converting and keeping customers, and learning from every test.',
@@ -279,3 +281,9 @@ export const SERVICES = [
 
 export const findService = (slug) => SERVICES.find((s) => s.slug === slug)
 export const serviceHref = (s) => `/services/${s.slug}`
+
+// Merge the extra depth (deep-dive section + additional FAQs) into each service.
+for (const s of SERVICES) {
+  const x = EXTRAS[s.slug]
+  if (x) { s.deepDive = x.deepDive; s.faqs = [...s.faqs, ...x.faqs] }
+}

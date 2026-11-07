@@ -40,7 +40,7 @@ export function CaseStudies() {
         <div className="case-studies__header">
           <div className="case-studies__header-left">
             <span className="label section-eyebrow">05 — Case Studies</span>
-            <h2>results that actually<br />speak for themselves.</h2>
+            <h2>Results that actually<br />speak for themselves.</h2>
           </div>
           <div className="case-studies__header-right">
             <p className="case-studies__sub">

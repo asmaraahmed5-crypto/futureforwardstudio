@@ -1,0 +1,12 @@
+/* ── About page extras (builds on ServicePage.css) ── */
+.sv-hero__num--word { font-size: clamp(120px, 20vw, 300px); right: -1%; bottom: -3%; letter-spacing: -0.04em; }
+
+.ab-who__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; overflow: hidden; }
+.ab-who__item { display: flex; flex-direction: column; gap: 10px; padding: 28px; background: #050505; transition: background .3s, opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms), transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms); }
+.ab-who__item:hover { background: #0e0a1a; }
+.ab-who__item h3 { font-size: clamp(19px, 1.7vw, 24px); font-weight: 600; color: #fff; }
+.ab-who__item h3::before { content: ''; display: block; width: 28px; height: 3px; border-radius: 2px; margin-bottom: 16px; background: linear-gradient(90deg, var(--sv-from), var(--sv-to)); }
+.ab-who__item p { font-size: 14px; color: rgba(255,255,255,.7); }
+
+@media (max-width: 960px) { .ab-who__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .ab-who__grid { grid-template-columns: 1fr; } }

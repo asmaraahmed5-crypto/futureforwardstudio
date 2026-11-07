@@ -25,6 +25,19 @@ async function handle(request, env) {
       headers.set('X-Robots-Tag', 'noindex')
       return new Response(fallback.body, { status: 404, headers })
     }
+    // The old stand-alone landing page now lives on the homepage.
+    if (url.pathname === '/ai-marketing-agency' || url.pathname === '/ai-marketing-agency/') {
+      return Response.redirect(new URL('/', url).toString(), 301)
+    }
+    // /blog/<slug>: prerendered per post. Unknown slugs get the blog shell with a real 404.
+    if (/^\/blog\/[^/]+\/?$/.test(url.pathname)) {
+      const res = await env.ASSETS.fetch(request)
+      if (res.status !== 404) return res
+      const shell = await env.ASSETS.fetch(new Request(new URL('/blog', url), request))
+      const headers = new Headers(shell.headers)
+      headers.set('X-Robots-Tag', 'noindex')
+      return new Response(shell.body, { status: 404, headers })
+    }
     if (url.pathname === '/services' || url.pathname === '/services/') {
       return Response.redirect(new URL('/#services', url).toString(), 301)
     }

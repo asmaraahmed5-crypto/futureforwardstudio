@@ -1,3 +1,4 @@
+import { sentenceCase } from '../sentenceCase'
 import { Warp } from '@paper-design/shaders-react'
 import { Rocket, TrendingUp, ShoppingBag, Users, Building2, Award, ArrowRight } from 'lucide-react'
 import { SpotButton } from './SpotButton'
@@ -7,21 +8,25 @@ const AUDIENCE = [
   {
     icon: Rocket,
     label: 'Startups',
+    href: '/ai-marketing-for-small-business',
     desc: 'Build your marketing engine without building a massive department.',
   },
   {
     icon: TrendingUp,
     label: 'Growing Businesses',
+    href: '/ai-marketing-for-small-business',
     desc: 'Scale your marketing without scaling the chaos.',
   },
   {
     icon: ShoppingBag,
     label: 'eCommerce Brands',
+    href: '/ai-marketing-for-ecommerce',
     desc: 'Improve acquisition, content, personalisation, and retention.',
   },
   {
     icon: Users,
     label: 'Service Businesses',
+    href: '/ai-marketing-for-small-business',
     desc: 'Turn visitors into conversations and conversations into customers.',
   },
   {
@@ -64,6 +69,11 @@ const SHADER_CONFIGS = [
   },
 ]
 
+// A card links to its solution page when it has an href, otherwise it is a plain block.
+function Card({ href, children }) {
+  return href ? <a href={href} className="wwww__card wwww__card--link">{children}</a> : <div className="wwww__card">{children}</div>
+}
+
 export function WhoWeWorkWith() {
   return (
     <section className="section section--light wwww" id="about">
@@ -72,15 +82,15 @@ export function WhoWeWorkWith() {
         {/* Header */}
         <div className="wwww__header">
           <span className="label section-eyebrow">08 — Who We Work With</span>
-          <h2>built for businesses that<br />refuse to stand still.</h2>
+          <h2>Built for businesses that<br />refuse to stand still.</h2>
         </div>
 
         {/* Shader cards grid */}
         <div className="wwww__grid">
-          {AUDIENCE.map(({ icon: Icon, label, desc }, i) => {
+          {AUDIENCE.map(({ icon: Icon, label, desc, href }, i) => {
             const cfg = SHADER_CONFIGS[i]
             return (
-              <div key={label} className="wwww__card">
+              <Card key={label} href={href}>
                 {/* WebGL shader background */}
                 <div className="wwww__shader" aria-hidden="true">
                   <Warp
@@ -104,13 +114,13 @@ export function WhoWeWorkWith() {
                   <div className="wwww__icon">
                     <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
                   </div>
-                  <h3 className="wwww__card-title">{label.toLowerCase()}</h3>
+                  <h3 className="wwww__card-title">{sentenceCase(label)}</h3>
                   <p className="wwww__card-desc">{desc}</p>
                   <span className="wwww__card-link">
                     Learn more <ArrowRight size={13} />
                   </span>
                 </div>
-              </div>
+              </Card>
             )
           })}
         </div>

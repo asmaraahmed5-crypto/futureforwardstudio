@@ -1,5 +1,5 @@
 /* ── Thank-you page ──────────────────────────────────── */
-.ty h1, .ty h2, .ty h3 { font-family: var(--font-sans); text-transform: lowercase; letter-spacing: -0.02em; }
+.ty h1, .ty h2, .ty h3 { font-family: var(--font-sans); letter-spacing: -0.02em; }
 .ty p { font-family: var(--font-sans); line-height: 1.65; margin: 0; }
 
 /* Scroll reveal */

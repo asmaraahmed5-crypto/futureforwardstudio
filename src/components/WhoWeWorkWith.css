@@ -120,3 +120,6 @@
     height: 260px;
   }
 }
+
+.wwww__card--link { display: block; text-decoration: none; color: inherit; }
+.wwww__card--link:focus-visible { outline: 2px solid #a78bfa; outline-offset: 4px; }

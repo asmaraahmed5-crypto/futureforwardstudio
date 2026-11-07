@@ -72,7 +72,7 @@ export function ShuffleCta() {
         <span className="label section-eyebrow">The Outcome</span>
         <h2 className="sc-heading">
           AI doesn't replace the marketing strategy.
-          <span className="sc-punch"> it supercharges it.</span>
+          <span className="sc-punch"> It supercharges it.</span>
         </h2>
         <p className="sc-desc">
           Every campaign smarter. Every decision faster. Every result bigger — because your marketing is finally backed by both human intelligence and machine power.

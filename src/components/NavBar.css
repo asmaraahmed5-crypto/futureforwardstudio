@@ -287,3 +287,15 @@
     font-size: clamp(32px, 8.5vw, 44px);
   }
 }
+
+/* ── Header audit CTA ── */
+.nm-cta {
+  display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 6px; background: #fff; color: #050505;
+  font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  transition: background .2s, transform .15s;
+}
+.nm-cta:hover { background: #c4b5fd; transform: translateY(-1px); }
+.nm-cta:focus-visible { outline: 2px solid #a78bfa; outline-offset: 3px; }
+@media (max-width: 560px) { .nm-cta { display: none; } }
+
+.nm-sub-group { margin: 14px 0 2px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.14); font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,0.5); }

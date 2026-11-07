@@ -9,8 +9,8 @@ import { ShuffleCta } from './components/ShuffleCta'
 import { SkewCards } from './components/SkewCards'
 import { ClientLogos } from './components/ClientLogos'
 import { Sparkles, ArrowRight } from 'lucide-react'
+import { AUDIT_HREF, AUDIT_LABEL } from './siteConfig'
 
-const AICloud = lazy(() => import('./components/AICloud').then(m => ({ default: m.AICloud })))
 const CaseStudies = lazy(() => import('./components/CaseStudies').then(m => ({ default: m.CaseStudies })))
 const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })))
 const Pricing = lazy(() => import('./components/Pricing').then(m => ({ default: m.Pricing })))
@@ -46,15 +46,6 @@ const SERVICES = [
   { num: '06', slug: 'ai-website-design', title: 'AI Website Design',      desc: 'Fast, conversion-focused websites designed and built with AI — sharp, on-brand, and made to turn visitors into customers.' },
   { num: '07', slug: 'ai-presentation-design', title: 'AI Presentation Design', desc: 'Pitch decks and presentations that look professionally designed, tell your story clearly, and get built in a fraction of the time.' },
   { num: '08', slug: 'growth-marketing', title: 'Growth Marketing',       desc: 'Connect the dots across your marketing ecosystem and keep moving your business forward.' },
-]
-
-const CLOUD_FEATURES = [
-  { title: 'Create',      desc: 'Generate ideas, campaigns, content, and messaging faster.' },
-  { title: 'Understand',  desc: 'Turn customer behaviour and data into useful insights.'    },
-  { title: 'Automate',    desc: 'Let AI handle repetitive workflows and marketing tasks.'   },
-  { title: 'Personalise', desc: 'Create messaging that feels more relevant to each customer.' },
-  { title: 'Optimise',    desc: 'Spot what\'s working, what\'s not, and where to improve.' },
-  { title: 'Grow',        desc: 'Turn insights into decisions that move your business forward.' },
 ]
 
 const WHO_ITS_FOR = [
@@ -103,11 +94,11 @@ function App() {
                 <span className="label">AI-Powered Marketing Agency</span>
                 <span className="rule" />
               </div>
-              <h1>future-proof your<br />marketing. today.</h1>
-              <p className="hero__sub">AI-powered marketing for businesses ready to move forward.</p>
+              <h1>Your AI marketing agency for <span style={{ whiteSpace: 'nowrap' }}>future-proof</span> growth.</h1>
+              <p className="hero__sub">An AI marketing agency for SEO, content, ads, automation and websites.</p>
             </div>
             <div className="hero-stream__bottom">
-              <SpotButton href="#contact" className="spot-btn--primary">Make My Marketing Future-Ready →</SpotButton>
+              <SpotButton href={AUDIT_HREF} data-audit className="spot-btn--primary">{AUDIT_LABEL} →</SpotButton>
             </div>
           </div>
         </ImageStreamHero>
@@ -122,17 +113,17 @@ function App() {
             <div className="spotlight__text">
               <div className="spotlight__eyebrow">
                 <Sparkles size={14} className="spotlight__icon" />
-                <span className="label">01 — Your Unfair Advantage</span>
+                <span className="label">01 — Why choose an AI marketing agency</span>
               </div>
               <h2 className="spotlight__heading">
-                your marketing just got a{' '}
+                Your marketing just got a{' '}
                 <span className="spotlight__accent">brain upgrade.</span>
               </h2>
               <p className="spotlight__desc">
                 Marketing is a lot. SEO. Social. Content. Paid ads. Emails. Lead generation. Analytics. Automation. And somehow you're expected to understand every new AI tool that launches this Tuesday.
               </p>
               <p className="spotlight__desc">
-                Future Forward Studio combines <strong>AI, strategy, creativity, and automation</strong> with a little human magic to make your marketing work harder — without burning out your team.
+                Future Forward Studio is an <strong>AI marketing agency</strong> that combines <strong>AI, strategy, creativity, and automation</strong> with a little human magic to make your marketing work harder — without burning out your team. Transparent plans start at $2,500 a month.
               </p>
               <SpotButton href="#contact" className="spot-btn--dark spotlight__btn">Give My Marketing an AI Upgrade →</SpotButton>
             </div>
@@ -167,7 +158,7 @@ function App() {
             {/* Right: text + checklist */}
             <div className="rc-text">
               <span className="label section-eyebrow">02 — The Reality</span>
-              <h2>marketing doesn't need more noise. it needs more intelligence.</h2>
+              <h2>Marketing doesn't need more noise. It needs more intelligence.</h2>
               <ul className="rc-items">
                 {[
                   'You create content. Nothing happens.',
@@ -193,7 +184,7 @@ function App() {
           <div className="hw-inner">
             <div className="hw-header">
               <span className="label section-eyebrow">03 — How We Work</span>
-              <h2>ai does the heavy lifting. we make sure it doesn't lift the wrong thing.</h2>
+              <h2>AI does the heavy lifting. We make sure it doesn't lift the wrong thing.</h2>
               <p className="hw-header__desc">We combine AI's analytical power with human strategy to make every marketing decision smarter, faster, and more effective.</p>
               <SpotButton href="#contact" className="spot-btn--dark">
                 Supercharge My Marketing <ArrowRight size={15} />
@@ -204,21 +195,21 @@ function App() {
               {[
                 {
                   role: 'AI brings',
-                  title: 'the horsepower.',
+                  title: 'The horsepower.',
                   desc: 'Analyse data, identify patterns, accelerate content, automate tasks, and optimise campaigns at scale.',
                   img: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=500&h=281&fit=crop&q=55&fm=webp',
                   alt: 'AI data processing',
                 },
                 {
                   role: 'We bring',
-                  title: 'the steering wheel.',
+                  title: 'The steering wheel.',
                   desc: 'We decide what matters, where to focus, and how everything connects back to your business goals.',
                   img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=281&fit=crop&q=55&fm=webp',
                   alt: 'Marketing strategy planning',
                 },
                 {
                   role: 'You get',
-                  title: 'the destination.',
+                  title: 'The destination.',
                   desc: 'Efficient marketing. Better customer journeys. Smarter campaigns. A clearer path to growth.',
                   img: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&h=281&fit=crop&q=55&fm=webp',
                   alt: 'Business growth results',
@@ -247,20 +238,20 @@ function App() {
         <section className="section section--dark" id="services">
           <div className="section__inner section__inner--centered">
             <span className="label section-eyebrow">04 — What We Do</span>
-            <h2>what can future forward studio do for you?</h2>
-            <p className="section__sub">Quite a bit.</p>
+            <h2>AI marketing services built around your growth.</h2>
+            <p className="section__sub">From strategy and SEO to ads, automation and website design, here is what our AI marketing agency does for you.</p>
           </div>
           <SkewCards services={SERVICES} />
           <div className="section__inner section__inner--centered" style={{ marginTop: '16px' }}>
             <SpotButton href="#contact" className="spot-btn--primary" style={{ alignSelf: 'center' }}>Explore Our AI Marketing Services →</SpotButton>
+            <p className="services-solutions">
+              Also see: <a href="/generative-engine-optimization">Generative engine optimization</a> · <a href="/ai-marketing-for-small-business">AI marketing for small business</a> · <a href="/ai-marketing-for-ecommerce">AI marketing for eCommerce</a> · <a href="/pricing">Pricing</a>
+            </p>
           </div>
         </section>
 
         {/* ── 05 Case Studies (light) ── */}
         <Defer><CaseStudies /></Defer>
-
-        {/* ── 06 AI Cloud (light) ── */}
-        <Defer><AICloud /></Defer>
 
         {/* ── 06 Journey (dark) ── */}
         <Defer><JourneyTimeline /></Defer>
@@ -302,10 +293,10 @@ function App() {
         <section className="section section--light section--cta" id="contact">
           <div className="section__inner section__inner--centered">
             <span className="label section-eyebrow">Ready to Move Forward?</span>
-            <h2 className="h2--dark">that's kind of our thing.</h2>
-            <p className="section__sub section__sub--dark">You already have the business. You already have the ambition. Now let's make your marketing work a little harder for you.</p>
+            <h2 className="h2--dark">That's kind of our thing.</h2>
+            <p className="section__sub section__sub--dark">You already have the business. You already have the ambition. Now let's make your marketing work a little harder for you with an AI marketing agency that explains everything in plain English.</p>
             <div className="cta-buttons">
-              <SpotButton href="mailto:hello@futureforwardstudio.com" data-contact-popup className="spot-btn--dark">Get My Free AI Marketing Strategy →</SpotButton>
+              <SpotButton href={AUDIT_HREF} data-audit className="spot-btn--dark">{AUDIT_LABEL} →</SpotButton>
               <SpotButton href="mailto:hello@futureforwardstudio.com" data-contact-popup className="spot-btn--outline-dark">Talk to an AI Marketing Expert →</SpotButton>
             </div>
             <p className="cta-tagline cta-tagline--dark">Your future customers are out there. Let's help them find you.</p>

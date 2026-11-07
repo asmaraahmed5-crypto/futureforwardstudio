@@ -1,6 +1,6 @@
 /* ── Contact page ─────────────────────────────────────── */
 
-.ct h1, .ct h2, .ct h3 { font-family: var(--font-sans); text-transform: lowercase; letter-spacing: -0.02em; }
+.ct h1, .ct h2, .ct h3 { font-family: var(--font-sans); letter-spacing: -0.02em; }
 .ct h2 { font-size: clamp(28px, 3.6vw, 52px); font-weight: 700; line-height: 1.05; margin: 0; }
 .ct p  { font-family: var(--font-sans); line-height: 1.65; margin: 0; }
 

@@ -4,12 +4,14 @@ import './ContactPage.css'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import { ChevronDown, Globe, Clock, Mail, Phone, Gift } from 'lucide-react'
+import { track } from './analytics'
 import { SpotButton } from './components/SpotButton'
 
 const EMAIL = 'hello@futureforwardstudio.com'
 const PHONE = '' // e.g. '+1 555 000 0000' — the phone row stays hidden until this is set
 
 const HELP_OPTIONS = [
+  { label: 'A free AI marketing audit' },
   { label: 'A brand-new website' },
   { label: 'A website glow-up' },
   { label: 'AI-powered marketing' },
@@ -62,6 +64,7 @@ export default function ContactPage() {
     link.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
       `New enquiry from ${values.name || 'the website'}`
     )}&body=${encodeURIComponent(body)}`
+    track('generate_lead', { form_location: 'contact_page', service_interest: help || 'unspecified' })
     link.click()
     setSent(true)
     setTimeout(() => window.location.assign('/thank-you'), 700)
@@ -84,7 +87,7 @@ export default function ContactPage() {
               <span className="label">Contact Us</span>
               <span className="rule" />
             </div>
-            <h1 className="ct-hero__title">let’s make something awesome.</h1>
+            <h1 className="ct-hero__title">Let’s make something awesome.</h1>
             <p className="ct-hero__lead">
               Got an idea? A website that needs a little love? Or just curious about what AI can do for your business?
               <strong> You’re in the right place.</strong>
@@ -100,7 +103,7 @@ export default function ContactPage() {
           <div className="ct-form-layout">
           <aside className="ct-info">
             <span className="label ct-info__eyebrow">Get in touch</span>
-            <h2 className="ct-info__title">talk to a real human.</h2>
+            <h2 className="ct-info__title">Talk to a real human.</h2>
             <p className="ct-info__lead">Tell us what you’re working on and we’ll come back with clear ideas, not confusing tech talk.</p>
             <ul className="ct-info__list">
               <li><Globe size={18} aria-hidden="true" /><span><strong>Available worldwide</strong>Remote-first, working with businesses everywhere.</span></li>
@@ -118,7 +121,7 @@ export default function ContactPage() {
 
             {sent ? (
               <div className="ct-success" role="status">
-                <h3>your email app should be open.</h3>
+                <h3>Your email app should be open.</h3>
                 <p>
                   Hit send on the message we’ve prepared and it’ll land straight in our inbox. Didn’t open? Email us at{' '}
                   <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
@@ -182,7 +185,7 @@ export default function ContactPage() {
           <div className="ct-split">
             <div className="ct-split__copy">
               <span className="label section-eyebrow">No Pressure</span>
-              <h2>not sure what you need? no biggie.</h2>
+              <h2>Not sure what you need? No biggie.</h2>
               <p className="ct-notsure__lead">You don’t have to walk in knowing all the answers.</p>
               <p>
                 Maybe your website looks like it belongs in 2015. Maybe you’re tired of marketing that gets likes but not customers. Maybe you’ve heard everyone talking about AI and thought, “Okay… but how can it actually help my business?”
@@ -200,7 +203,7 @@ export default function ContactPage() {
           <div className="ct-free__inner">
             <div className="ct-free__copy">
               <span className="label section-eyebrow">Thinking About a New Website?</span>
-              <h2>see it before you buy it.</h2>
+              <h2>See it before you buy it.</h2>
               <p className="ct-free__lead">
                 Yep, your first website design is <strong>completely free.</strong>
               </p>
@@ -226,7 +229,7 @@ export default function ContactPage() {
         {/* ── What happens next (dark) ── */}
         <section className="section section--dark ct-steps">
           <div className="ct-steps__inner">
-            <h2>so, what happens after you hit send?</h2>
+            <h2>So, what happens after you hit send?</h2>
             <ol className="ct-steps__grid">
               {STEPS.map((s) => (
                 <li key={s.num} className="ct-step">
@@ -244,7 +247,7 @@ export default function ContactPage() {
         <section className="section section--light ct-final">
           <div className="ct-split ct-split--rev">
             <div className="ct-split__copy">
-              <h2>your next big idea could start here.</h2>
+              <h2>Your next big idea could start here.</h2>
               <p className="ct-final__lead">
                 A better website. Smarter marketing. More customers. A brand that finally feels like you.
               </p>

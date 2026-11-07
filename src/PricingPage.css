@@ -1,0 +1,38 @@
+/* ── Pricing page (builds on ServicePage.css) ── */
+.pp-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.pp-plan { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; border-radius: 16px; background: #fff; border: 1px solid #e3e3e3; transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s, opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms); }
+.pp-plan:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -30px rgba(0,0,0,.35); }
+.pp-plan--featured { background: #050505; border-color: #050505; color: #fff; }
+.sv .pp-plan__name { font-size: 22px; font-weight: 600; color: #050505; }
+.sv .pp-plan--featured .pp-plan__name { color: #fff; }
+.pp-badge { position: absolute; top: -13px; left: 28px; padding: 5px 12px; border-radius: 999px; background: linear-gradient(135deg, var(--sv-from), var(--sv-to)); color: #fff; font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.pp-plan__price { display: flex; align-items: baseline; gap: 6px; }
+.sv .pp-plan__price span { color: #050505; font-family: var(--font-sans); font-size: clamp(36px, 4vw, 52px); font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+.pp-plan__price em { font-style: normal; font-size: 15px; color: #777; }
+.sv .pp-plan--featured .pp-plan__price span { color: #fff; }
+.pp-plan--featured .pp-plan__price em { color: rgba(255,255,255,.65); }
+.sv .pp-plan__desc { color: #555; font-size: 14px; }
+.sv .pp-plan--featured .pp-plan__desc { color: rgba(255,255,255,.75); }
+.pp-plan__list { list-style: none; margin: 6px 0 10px; padding: 18px 0 0; border-top: 1px solid #e8e8e8; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.pp-plan--featured .pp-plan__list { border-top-color: rgba(255,255,255,.18); }
+.sv .pp-plan--featured .pp-plan__list li { color: #fff; }
+.pp-plan__list li { display: flex; gap: 10px; align-items: flex-start; font-family: var(--font-sans); font-size: 14px; line-height: 1.4; }
+.pp-plan__list svg { flex-shrink: 0; margin-top: 2px; color: #7c3aed; }
+.pp-plan--featured .pp-plan__list svg { color: #c4b5fd; }
+.pp-plan .spot-btn { align-self: stretch; justify-content: center; }
+.sv .pp-note { margin-top: 28px; text-align: center; color: #555; font-size: 14px; }
+
+.pp-compare h2 { color: #fff; }
+.pp-table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,.14); border-radius: 14px; }
+.pp-table { width: 100%; min-width: 640px; border-collapse: collapse; font-family: var(--font-sans); font-size: 14px; }
+.pp-table th, .pp-table td { padding: 16px 18px; text-align: center; border-bottom: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.85); }
+.pp-table thead th { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(255,255,255,.04); }
+.pp-table tbody th { text-align: left; font-weight: 500; color: #fff; }
+.pp-table thead th:first-child { text-align: left; }
+.pp-table tr:last-child th, .pp-table tr:last-child td { border-bottom: 0; }
+.pp-table td svg { color: #a78bfa; vertical-align: middle; }
+.pp-table .pp-no { color: rgba(255,255,255,.25); }
+.sv .pp-more { margin-top: 28px; color: #555; font-size: 15px; }
+.pp-more a { color: #5b21b6; }
+
+@media (max-width: 960px) { .pp-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }

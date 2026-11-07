@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { X, Gift, ChevronDown } from 'lucide-react'
+import { track } from '../analytics'
 import { SpotButton } from './SpotButton'
 import './ContactPopup.css'
 
 const EMAIL = 'hello@futureforwardstudio.com'
 
 const HELP_OPTIONS = [
+  { label: 'A free AI marketing audit' },
   { label: 'A brand-new website' },
   { label: 'A website glow-up' },
   { label: 'AI-powered marketing' },
@@ -16,10 +18,14 @@ const HELP_OPTIONS = [
 
 const EMPTY = { name: '', business: '', email: '', phone: '', website: '', message: '' }
 
-export function ContactPopup({ open, onClose }) {
+export function ContactPopup({ open, onClose, intent = '' }) {
   const [values, setValues] = useState(EMPTY)
   const [help, setHelp] = useState('')
   const [sent, setSent] = useState(false)
+
+  useEffect(() => {
+    if (open && intent === 'audit') setHelp('A free AI marketing audit')
+  }, [open, intent])
 
   useEffect(() => {
     if (!open) return
@@ -48,6 +54,7 @@ export function ContactPopup({ open, onClose }) {
     link.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
       `New enquiry from ${values.name || 'the website'}`
     )}&body=${encodeURIComponent(body)}`
+    track('generate_lead', { form_location: 'popup', service_interest: help || 'unspecified' })
     link.click()
     setSent(true)
     setTimeout(() => window.location.assign('/thank-you'), 700)
@@ -84,7 +91,7 @@ export function ContactPopup({ open, onClose }) {
 
           {sent ? (
             <div className="cp-success" role="status">
-              <h2 id="cp-title">your email app should be open.</h2>
+              <h2 id="cp-title">Your email app should be open.</h2>
               <p>
                 Hit send on the message we’ve prepared and it’ll land in our inbox. Didn’t open? Email{' '}
                 <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
@@ -94,7 +101,7 @@ export function ContactPopup({ open, onClose }) {
           ) : (
             <form className="cp-form" onSubmit={onSubmit}>
               <span className="cp-eyebrow">Contact Us</span>
-              <h2 id="cp-title" className="cp-title">let’s make something awesome.</h2>
+              <h2 id="cp-title" className="cp-title">Let’s make something awesome.</h2>
               <p className="cp-lead">Tell us a little about you. The basics are plenty.</p>
 
               <div className="cp-grid">

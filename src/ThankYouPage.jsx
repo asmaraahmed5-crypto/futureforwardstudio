@@ -20,7 +20,7 @@ const WHILE_YOU_WAIT = [
   { icon: CircleDollarSign, label: 'Look at pricing',  href: '/#pricing' },
 ]
 
-const HEADLINE = ['thank', 'you.', 'we’ll', 'take', 'it', 'from', 'here.']
+const HEADLINE = ['Thank', 'you.', 'We’ll', 'take', 'it', 'from', 'here.']
 const COLORS = ['#7c3aed', '#a78bfa', '#c4b5fd', '#ffffff', '#5b21b6']
 
 /* One-off confetti burst from the check badge. Skipped for reduced motion. */
@@ -142,7 +142,7 @@ export default function ThankYouPage() {
           <div className="ty-steps__inner">
             <div className="ty-steps__head reveal">
               <span className="label section-eyebrow">What happens next</span>
-              <h2>here’s what to expect.</h2>
+              <h2>Here’s what to expect.</h2>
             </div>
 
             <ol className="ty-steps__grid reveal">
@@ -168,7 +168,7 @@ export default function ThankYouPage() {
             </div>
             <div className="ty-free__copy reveal">
               <span className="ty-badge">Free</span>
-              <h2>your first website design is free.</h2>
+              <h2>Your first website design is free.</h2>
               <p>See it before you buy it. No guessing, just a real design for your business.</p>
               <p className="ty-free__mail">
                 <Mail size={18} aria-hidden="true" />
@@ -181,7 +181,7 @@ export default function ThankYouPage() {
         {/* ── While you wait ── */}
         <section className="section section--light ty-wait">
           <div className="ty-wait__inner">
-            <h2 className="reveal">while you wait.</h2>
+            <h2 className="reveal">While you wait.</h2>
             <div className="ty-wait__grid">
               {WHILE_YOU_WAIT.map(({ icon: Icon, label, href }, i) => (
                 <a key={label} href={href} className="ty-link reveal" style={{ '--i': i }}>

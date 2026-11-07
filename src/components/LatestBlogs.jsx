@@ -1,36 +1,23 @@
 import { ArrowRight } from 'lucide-react'
 import { SpotButton } from './SpotButton'
+import { findPost, postHref } from '../blogData'
 import './LatestBlogs.css'
 
-const POSTS = [
-  {
-    category: 'AI Strategy',
-    title: 'Why AI Marketing Isn\'t Just About Speed — It\'s About Clarity',
-    excerpt: 'The biggest win AI gives marketers isn\'t doing things faster. It\'s finally understanding what\'s actually working and why.',
-    date: 'Sep 18, 2026',
-    readTime: '5 min read',
-    img: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=500&fit=crop&q=75&fm=webp',
-    alt: 'AI marketing strategy',
-  },
-  {
-    category: 'Content Marketing',
-    title: '7 Ways to Use AI Content Without Sounding Like a Robot',
-    excerpt: 'AI-generated content doesn\'t have to be generic. Here\'s how to use it as a starting point, not an endpoint.',
-    date: 'Sep 10, 2026',
-    readTime: '7 min read',
-    img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop&q=75&fm=webp',
-    alt: 'Content marketing',
-  },
-  {
-    category: 'Marketing Automation',
-    title: 'The Automation Mistake Most Businesses Make (And How to Fix It)',
-    excerpt: 'Automating a broken process just makes it break faster. Start with the strategy, then bring in the automation.',
-    date: 'Sep 3, 2026',
-    readTime: '6 min read',
-    img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop&q=75&fm=webp',
-    alt: 'Marketing automation workflow',
-  },
-]
+// The three most useful starting posts, pulled from the real blog.
+const FEATURED = ['what-is-ai-marketing', 'ai-content-marketing-strategy', 'marketing-automation-workflows']
+const POSTS = FEATURED.map((slug) => {
+  const p = findPost(slug)
+  return {
+    href: postHref(p),
+    category: p.category,
+    title: p.title,
+    excerpt: p.description,
+    date: new Date(p.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+    readTime: `${p.mins} min read`,
+    img: p.image,
+    alt: p.imageAlt,
+  }
+})
 
 export function LatestBlogs() {
   return (
@@ -40,28 +27,28 @@ export function LatestBlogs() {
         <div className="latest-blogs__header">
           <div className="latest-blogs__header-left">
             <span className="label section-eyebrow">Latest from the Blog</span>
-            <h2>thinking out loud<br />about AI marketing.</h2>
+            <h2>Thinking out loud<br />about AI marketing.</h2>
           </div>
-          <SpotButton href="#blog" className="spot-btn--dark latest-blogs__cta-top">
+          <SpotButton href="/blog" className="spot-btn--dark latest-blogs__cta-top">
             View All Posts <ArrowRight size={14} />
           </SpotButton>
         </div>
 
         <div className="latest-blogs__grid">
-          {POSTS.map(({ category, title, excerpt, date, readTime, img, alt }) => (
+          {POSTS.map(({ href, category, title, excerpt, date, readTime, img, alt }) => (
             <article key={title} className="blog-card">
-              <a href="#blog" className="blog-card__img-link">
-                <img src={img} alt={alt} className="blog-card__img" width="800" height="500" loading="lazy" />
+              <a href={href} className="blog-card__img-link">
+                <img src={img} alt={alt} className="blog-card__img" width="1200" height="630" loading="lazy" />
               </a>
               <div className="blog-card__body">
                 <span className="blog-card__category label">{category}</span>
                 <h3 className="blog-card__title">
-                  <a href="#blog">{title}</a>
+                  <a href={href}>{title}</a>
                 </h3>
                 <p className="blog-card__excerpt">{excerpt}</p>
                 <div className="blog-card__footer">
                   <span className="blog-card__meta">{date} · {readTime}</span>
-                  <a href="#blog" className="blog-card__read">
+                  <a href={href} className="blog-card__read">
                     Read <ArrowRight size={12} />
                   </a>
                 </div>

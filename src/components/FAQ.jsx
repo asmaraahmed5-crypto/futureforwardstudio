@@ -14,7 +14,7 @@ export function FAQ() {
 
         <div className="faq__header">
           <span className="label section-eyebrow">FAQs</span>
-          <h2>questions people<br />actually ask us.</h2>
+          <h2>Questions people<br />actually ask us.</h2>
           <p className="faq__sub">
             If yours isn't here,{' '}
             <a href="#contact" className="faq__link">just ask us directly.</a>

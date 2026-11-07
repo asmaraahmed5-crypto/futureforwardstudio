@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import { CustomEase } from 'gsap/CustomEase'
 import './NavBar.css'
 import { SERVICES, serviceHref } from '../servicesData'
+import { LANDINGS } from '../landingData'
+import { AUDIT_HREF, AUDIT_LABEL_SHORT } from '../siteConfig'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(CustomEase)
@@ -13,8 +15,9 @@ if (typeof window !== 'undefined') {
 
 const NAV_LINKS = [
   { label: 'Services',   href: '#services', shape: '1' },
-  { label: 'About Us',   href: '#about',    shape: '2' },
-  { label: 'Pricing',    href: '#pricing',  shape: '3' },
+  { label: 'About Us',   href: '/about',    shape: '2' },
+  { label: 'Pricing',    href: '/pricing',  shape: '3' },
+  { label: 'Blog',       href: '/blog' },
   { label: 'Contact Us', href: '#contact',  shape: '4' },
 ]
 
@@ -136,6 +139,7 @@ export default function NavBar({ base = '', contactHref = '/contact' }) {
           </a>
 
           <div className="nm-header-right">
+            <a href={AUDIT_HREF} data-audit className="nm-cta">{AUDIT_LABEL_SHORT}</a>
             <button
               className="nm-menu-btn"
               onClick={() => setIsOpen(v => !v)}
@@ -199,7 +203,7 @@ export default function NavBar({ base = '', contactHref = '/contact' }) {
           <ul className="nm-list">
             {NAV_LINKS.map(({ label, href, shape }) => {
               const link = (
-                <a href={label === 'Contact Us' && contactHref ? contactHref : `${base}${href}`} className="nm-link" data-contact-page={label === 'Contact Us' ? '' : undefined} onClick={close}>
+                <a href={label === 'Contact Us' && contactHref ? contactHref : (href.startsWith('/') ? href : `${base}${href}`)} className="nm-link" data-contact-page={label === 'Contact Us' ? '' : undefined} onClick={close}>
                   <span className="nm-link-text">{label}</span>
                   <div className="nm-link-bg" />
                 </a>
@@ -230,6 +234,14 @@ export default function NavBar({ base = '', contactHref = '/contact' }) {
                         <li key={s.slug}>
                           <a href={serviceHref(s)} className="nm-sub-link" onClick={close}>
                             <span className="nm-sub-num">{s.num}</span>{s.title}
+                          </a>
+                        </li>
+                      ))}
+                      <li className="nm-sub-group" aria-hidden="true">Solutions</li>
+                      {LANDINGS.map((l) => (
+                        <li key={l.path}>
+                          <a href={l.path} className="nm-sub-link" onClick={close}>
+                            <span className="nm-sub-num">+</span>{l.title}
                           </a>
                         </li>
                       ))}
